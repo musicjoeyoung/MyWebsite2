@@ -11,3 +11,30 @@
         @content;
     }
 }
+
+@mixin section {
+    min-height: 100vh;
+    max-height: 100%;
+    background-color: $background;
+    color: $white;
+    padding: 1rem;
+    box-shadow: 0 0 2rem -0.5rem #000000;
+    scroll-margin-top: 80px;
+
+    @include tablet() {
+        padding: 1rem 5rem;
+    }
+}
+
+@mixin footer {
+    max-height: 100%;
+    background-color: $background;
+    color: $white;
+    padding: 1rem;
+    box-shadow: 0 0 2rem -0.5rem #000000;
+    scroll-margin-top: 80px;
+
+    @include tablet() {
+        padding: 1rem 5rem;
+    }
+}

@@ -1,1 +1,161 @@
 @use "../../styles/partials/index" as *;
+
+.dayMode {
+    background-color: white !important;
+    color: #073b4c !important;
+}
+
+.contact {
+    @include section;
+
+    &__link {
+        color: $white;
+    }
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    &__input {
+        width: 14rem;
+        margin: 0 auto;
+    }
+    &__textarea {
+        width: 25rem;
+        margin: 0 auto;
+        height: 8rem;
+
+        @media screen and (max-width: 576px) {
+            width: 18rem;
+        }
+    }
+    &__button {
+        width: 10rem;
+        margin: 1rem auto;
+    }
+}
+.container {
+    text-align: center;
+    margin-top: 15%;
+}
+.h3 {
+    font-size: 19px;
+}
+.iconContainer {
+    width: 70px;
+    position: fixed;
+    bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -80px;
+}
+.icon {
+    width: 30px;
+    margin: 10px;
+}
+/* .email {
+  width: 60px;
+  margin: 10px;
+} */
+
+.glowOnHover {
+    //width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    //color: #fff;
+    background: #00000000;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 35px;
+    padding: 15px;
+    text-align: center;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+    /* margin: 20px; */
+}
+
+.glowOnHover:before {
+    content: "";
+    background: linear-gradient(45deg, #073b4c, #118ab2, #546a7b, #c5cfd6);
+    position: absolute;
+    top: 8px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+}
+
+.glowOnHover:active {
+    color: #000;
+}
+
+.glowOnHover:active:after {
+    background: transparent;
+}
+
+.glowOnHover:hover:before {
+    opacity: 1;
+}
+
+.glowOnHover:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: #111111b5; */
+    left: 0;
+    top: 0;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+@media screen and (max-width: 450px) {
+    .iconContainer {
+        margin: 0 auto;
+        width: 50%;
+        position: relative;
+        display: inline-block;
+        bottom: 0px;
+        margin-top: 80px;
+    }
+    .h3 {
+        margin-top: 80px;
+    }
+    .glowOnHover:before {
+        opacity: 1;
+    }
+    .glowOnHover {
+        width: 75%;
+        margin: 23% 0% 5% 12.5%;
+    }
+}

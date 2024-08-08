@@ -1,1 +1,20 @@
 @use "../../styles/partials/index" as *;
+
+.experience {
+    @include section;
+
+    &__ul {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        line-height: 2rem;
+
+        > li:nth-child(-n + 5) {
+            font-weight: 800;
+
+            ul > li {
+                font-weight: 400;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@use "../../styles/partials/index" as *;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    input,
+    textarea {
+        width: 50%;
+    }
+    textarea {
+        height: 10rem;
+    }
+    input[type="submit"] {
+        margin-top: 1rem;
+        width: 30%;
+    }
+}

@@ -1,1 +1,14 @@
 @use "../../styles/partials/index" as *;
+
+.main {
+    padding: 2rem;
+    background-color: $background;
+    color: $white;
+
+    &__name {
+        font-size: clamp(3rem, 1.5vw, 4rem);
+    }
+}
+
+.welcome {
+}

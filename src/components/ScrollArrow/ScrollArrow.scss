@@ -1,0 +1,20 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: -8px;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+
+    &.visible {
+        display: block;
+    }
+
+    span {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
