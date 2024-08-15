@@ -29,28 +29,32 @@ const Timer: React.FC = () => {
     };
 
     return (
-        <div>
-            <div>
+        <div className="timer">
+            <div className="timer__controls">
                 <input
                     type="number"
                     value={time}
                     onChange={(e) => setTime(Number(e.target.value))}
+                    className="timer__input"
                 />
-                <button onClick={handleStart}>Start</button>
-                <button onClick={handleStop}>Stop</button>
-                <button onClick={handleReset}>Reset</button>
+                <button className="timer__button" onClick={handleStart}>Start</button>
+                <button className="timer__button" onClick={handleStop}>Stop</button>
+                <button className="timer__button" onClick={handleReset}>Reset</button>
             </div>
-            <div className="timer-container">
+            <div className="timer__container">
                 <CountdownCircleTimer
                     key={timerKey}
                     isPlaying={isRunning}
                     duration={time}
                     colors="#FF0000"
                     onComplete={handleStop}
+                    size={380}
+                    strokeWidth={25}
+                /* trailColor="#151932" */
                 >
                     {({ remainingTime }) => (
-                        <div className="timer">
-                            <div className="text">{formatTime(remainingTime)}</div>
+                        <div className="timer__time">
+                            <div className="timer__text">{formatTime(remainingTime)}</div>
                         </div>
                     )}
                 </CountdownCircleTimer>

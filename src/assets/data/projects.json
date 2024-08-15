@@ -44,10 +44,25 @@
   {
     "title": "Weather",
     "url": "/weather",
-    "repo_url": "",
+    "repo_url": "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Weather/Weather.tsx",
     "description": "A weather app built using the OpenWeather API",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723735607/Weather_fgld0s.png"
 
+  },
+    {
+    "title": "Timer",
+    "url": "/timer",
+    "repo_url": "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Timer/Timer.tsx",
+    "description": "A countdown timer I use when teaching",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723738152/Screenshot_2024-08-15_at_12.09.03_PM_qmisf1.png"
+
+  },
+  {
+    "title": "Team Generator",
+    "url": "https://github.com/musicjoeyoung/Team-Generator",
+    "repo_url": "https://github.com/musicjoeyoung/Team-Generator",
+    "description":"A Node.js tool I use for teaching that randomly generates teams as well as student folders",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723738575/Screenshot_2024-08-15_at_12.15.52_PM_u1ljyr.png"
   },
   {
     "title": "Seasonle",
