@@ -1,0 +1,81 @@
+[
+      {
+    "title": "CodeCards",
+    "url": "https://sensational-pegasus-16a760.netlify.app/",
+    "repo_url": "https://github.com/musicjoeyoung/Flashcards",
+    "description": "Welcome to CodeCards, the ultimate learning tool for mastering JavaScript! Whether you're a beginner just starting your coding journey or an experienced developer looking to deepen your understanding of JavaScript, our application is designed to help you learn and reinforce key concepts with ease.",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/CodeCards_q1k9rm.png"
+  },
+  {
+    "title": "78th Army Band",
+    "url": "https://www.78tharmyband.org/",
+    "repo_url": "https://github.com/musicjoeyoung/78ArmyBand",
+    "description": "Website for the US Army 78th Army Band",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572917/78th-Army-Band_sfihan.png"
+  },
+    {
+    "title": "Jay Cowit",
+    "url": "https://jaycowit.com/",
+    "repo_url": "https://github.com/musicjoeyoung/jaycowit",
+    "description": "Portfolio website for Jay Cowit",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/Jay-Cowit_atvhyw.png"
+  },
+    {
+    "title": "Jackie Martin",
+    "url": "https://audiojacke.com/",
+    "repo_url": "https://github.com/musicjoeyoung/jackie-martin",
+    "description": "Portfolio website for Jackie Martin",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572915/Jackie-Martin_xrqtvq.png"
+  },
+  {
+    "title": "Carly Anderson",
+    "url": "https://carlyandersonwrites.com/",
+    "repo_url": "https://github.com/musicjoeyoung/Carly-Website",
+    "description": "Website for writer, Carly Anderson",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/Carly-Anderson_swmo3m.png"
+  },
+  {
+    "title": "TS Piano",
+    "url": "https://tourmaline-youtiao-7ca8b6.netlify.app/",
+    "repo_url": "https://github.com/musicjoeyoung/piano-ts",
+    "description": "A piano app built with TypeScript & Tone.js",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/TS-Piano_qslant.png"
+  },
+  {
+    "title": "Weather",
+    "url": "/weather",
+    "repo_url": "",
+    "description": "A weather app built using the OpenWeather API",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723735607/Weather_fgld0s.png"
+
+  },
+  {
+    "title": "Seasonle",
+    "url": "https://wonderful-ganache-6ce0a6.netlify.app/",
+    "repo_url": "https://github.com/musicjoeyoung/Seasonle-Game",
+    "description": "A Worldle clone about seasons",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572915/Seasonle_lokh3m.png"
+  },
+  {
+    "title": "United States of Beyoncé",
+    "url": "https://us-bey.netlify.app/",
+    "repo_url": "https://github.com/musicjoeyoung/us-bey",
+    "description": "Just the silliest app you'll ever find on the internet",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572915/USA-Beyonce%CC%81_rpfwln.png"
+  },
+    {
+    "title": "Music Memory",
+    "url": "https://taupe-starship-4cf747.netlify.app/",
+    "repo_url": "https://github.com/musicjoeyoung/MusicMemoryGame",
+    "description": "Built during a 24-hour hackathon through Mintbean.io early in my coding career, this is a game that tests the user's ability to strengthen their tonal and visual memory.",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/Music-Memory_fnvzuy.png"
+  },
+    {
+    "title": "Joseph M Young - NextJS portfolio",
+    "url": "https://fa0ae40a-627f-4bbf-ad1e-abe81219724d.netlify.app/",
+    "repo_url": "https://github.com/musicjoeyoung/MyWebsite",
+    "description": "This is my previous portfolio website built with NextJS",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/JosephMYoung-NextJS_gwmdrk.png"
+  }
+
+]

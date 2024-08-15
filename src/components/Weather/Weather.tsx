@@ -1,21 +1,24 @@
 import "./Weather.scss"
+
+import { ChangeEvent, useState } from "react"
+
+import { WeatherState } from "../../types/weather"
 import axios from "axios"
-import { useState } from "react"
 
-const API_KEY = import.meta.app.VITE_APP_OPEN_WEATHER_API_KEY;
-const URL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&units=imperial&appid=${API_KEY}`;
-
+const API_KEY = import.meta.env.VITE_APP_OPEN_WEATHER_API_KEY;
 
 const Weather = () => {
-    const [weather, setWeather] = useState(null)//set type later when I have an internet connection and can know what all the data type(s) are?
+    const [weather, setWeather] = useState<WeatherState | null>(null)
     const [zipCode, setZipCode] = useState("")
     const [countryCode, setCountryCode] = useState("")
 
-    const handleSubmit = async (event) => {
+    const URL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&units=imperial&appid=${API_KEY}`;
+
+    const handleSubmit = async (event: ChangeEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
             const response = await axios.get(URL);
-            setWeather(response);
+            setWeather(response.data);
         } catch (error) {
             console.error(error)
         }
@@ -51,27 +54,27 @@ const Weather = () => {
     const year = d.getFullYear();
     const fullDate: string = day + ", " + month + " " + date + ", " + year;
     return (
-        <div className="background">
-            <div className="main">
-                <div className="main__zipCode">
+        <div className="weather-background">
+            <div className="weather">
+                <div className="weather__zipCode">
                     <p style={{ marginTop: "-75px" }}>
                         Enter a zip code to find the weather!
                     </p>
                 </div>
-                <div className="weather_container">
+                <div className="weather__container">
                     <p>{`${fullDate}`}</p>
                     <form
                         onSubmit={handleSubmit}
-                        className="weather_container__form"
+                        className="weather__form"
                     >
                         <input
                             type="text"
                             placeholder="Enter a zip code"
                             value={zipCode}
                             onChange={(e) => setZipCode(e.target.value)}
-                            className="weather_container__input"
+                            className="weather__input"
                         />
-                        <button className="weather_container__button" type="submit">
+                        <button className="weather__button" type="submit">
                             Get Weather
                         </button>
                     </form>

@@ -1,0 +1,23 @@
+@use "../../styles/partials/index" as *;
+
+.flashlight-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+    cursor: none;
+}
+
+.flashlight-overlay {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 65%);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+}

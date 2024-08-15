@@ -1,13 +1,16 @@
-
 import './App.scss'
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
-import Landing from "./pages/Landing/Landing"
-import Home from "./pages/Home/Home"
-import Footer from './components/Footer/Footer'
+
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
+
 import Error404 from './pages/Error404/Error404'
-import Weather from './components/Weather/Weather'
-import ScrollArrow from './components/ScrollArrow/ScrollArrow'
+import Footer from './components/Footer/Footer'
+import Home from "./pages/Home/Home"
+import Landing from "./pages/Landing/Landing"
 import Music from './pages/Music/Music'
+import ScrollArrow from './components/ScrollArrow/ScrollArrow'
+import Snippets from './pages/Snippets/Snippets'
+import Timer from './components/Timer/Timer'
+import Weather from './components/Weather/Weather'
 
 console.log(
   '%c🌐 Want a stunning website? 🚀 %cReach out to%c Joe Young %cjoseph.m.young2@gmail.com',
@@ -28,10 +31,12 @@ const App = () => {
         <Route path="/welcome" element={<Landing />} />
         <Route path="/" element={<Home />} />
         <Route path="/music" element={<Music />} />
-        {/* <Route path="/weather" element={<Weather />} /> */}
+        <Route path="/snippets" element={<Snippets />} />
         <Route path="*" element={<Error404 />} />
+        <Route path="/weather" element={<Weather />} />
+        <Route path='/timer' element={<Timer />} />
       </Routes>
-      {/* {mainLayout && <Footer />} */}
+      {mainLayout && <Footer />}
       {mainLayout && <ScrollArrow />}
 
     </>

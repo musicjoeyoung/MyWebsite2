@@ -3,6 +3,7 @@ import "./Experience.scss"
 const Experience = () => {
     return (
         <div className="experience .in-view" id="experience">
+            <h2>Experience</h2>
             <ul className="experience__ul" >
                 <li >
                     Educator, Software Engineering - BrainStation - New York,

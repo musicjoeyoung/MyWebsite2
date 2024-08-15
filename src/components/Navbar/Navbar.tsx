@@ -1,15 +1,19 @@
 import "./Navbar.scss"
+import { Link } from "../../types/link"
 
-const Navbar = () => {
+
+interface NavbarProps {
+    links: Link[]
+}
+const Navbar: React.FC<NavbarProps> = ({ links }) => {
     return (
         <nav className="navbar">
             <ul className="navbar__ul">
-                <li><a href="/">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
+                {links.map((link, index) => (
+                    <li key={index}>
+                        <a href={link.url}>{link.label}</a>
+                    </li>
+                ))}
             </ul>
         </nav>
 

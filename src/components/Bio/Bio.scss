@@ -25,6 +25,11 @@
     &__img {
         width: 200px;
         height: fit-content;
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
     }
 }
 

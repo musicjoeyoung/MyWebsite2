@@ -1,18 +1,30 @@
 import "./Home.scss"
+
 import Bio from "../../components/Bio/Bio"
-import Navbar from "../../components/Navbar/Navbar"
-import Hero from "../../components/Hero/Hero"
-import Projects from "../../components/Projects/Projects"
-import Experience from "../../components/Experience/Experience"
 import Contact from "../../components/Contact/Contact"
-import Footer from "../../components/Footer/Footer"
-import ScrollArrow from "../../components/ScrollArrow/ScrollArrow"
+import Experience from "../../components/Experience/Experience"
+import FlashlightComponent from "../../components/Flashlight/Flashlight"
+import Hero from "../../components/Hero/Hero"
+import { Link } from "../../types/link"
+import Navbar from "../../components/Navbar/Navbar"
 import Parallax from "../../components/Parallax/Parallax"
+import Projects from "../../components/Projects/Projects"
 
 const Home = () => {
+
+    const homeLinks: Link[] = [
+        { label: "Home", url: "/" },
+        { label: "About", url: "#about" },
+        { label: "Projects", url: "#projects" },
+        { label: "Experience", url: "#experience" },
+        { label: "Resume", url: "#resume" },
+        { label: "Contact", url: "#contact" },
+        { label: "Snippets", url: "/snippets" },
+    ]
     return (
         <>
-            <Navbar />
+            <FlashlightComponent />
+            <Navbar links={homeLinks} />
             <Hero />
             <Parallax />
             <Bio />
@@ -23,8 +35,6 @@ const Home = () => {
             <Parallax />
             <Contact />
             <Parallax />
-            <Footer />
-            <ScrollArrow />
         </>
     )
 }

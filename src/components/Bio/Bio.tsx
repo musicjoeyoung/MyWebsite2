@@ -1,4 +1,5 @@
 import "./Bio.scss"
+
 import profilePhoto from "../../assets/images/Joe.jpg"
 
 const Bio = () => {

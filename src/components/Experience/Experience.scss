@@ -18,3 +18,37 @@
         }
     }
 }
+
+/* @use "../../styles/partials/index" as *;
+
+.experience {
+    @include section;
+
+    &__ul {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        line-height: 2rem;
+        animation: fade-in-right 1s ease-in-out forwards;
+        -webkit-animation: fade-in-right 1s ease-in-out forwards;
+
+        > li:nth-child(-n + 5) {
+            font-weight: 800;
+
+            ul > li {
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+@keyframes fade-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+} */
