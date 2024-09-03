@@ -1,0 +1,84 @@
+@use "../../styles/partials/index" as *;
+
+.timerContainer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 100vh;
+
+    &__label {
+        color: white;
+    }
+    &__input {
+        width: 40px;
+    }
+
+    &__inputContainer {
+        display: inline-flex;
+    }
+    &__inputContainer div {
+        margin: 7px;
+    }
+}
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    margin: 0 auto;
+
+    &__button {
+        margin-top: 2px;
+        border: none;
+        color: white;
+        background-color: #5a5858;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+    }
+    /*   &__button:disabled {
+    background-color: red;
+  } */
+
+    &__start {
+        background-color: #086808;
+    }
+    &__stop {
+        background-color: #b60202;
+    }
+}
+
+.floatZoom {
+    animation-name: float-zoom;
+    animation-duration: 14s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    display: inline-block;
+
+    &__h2 {
+        margin-top: 3rem;
+    }
+}
+
+@keyframes float-zoom {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        transform-origin: center center;
+    }
+    50% {
+        transform: scale(4.5);
+        opacity: 0.5;
+        transform-origin: center center;
+        -webkit-transform: scale(4.5);
+        -moz-transform: scale(4.5);
+        -ms-transform: scale(4.5);
+        -o-transform: scale(4.5);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        transform-origin: center center;
+    }
+}

@@ -1,8 +1,10 @@
-import { FormEvent, useRef, useState } from "react";
-import emailjs from '@emailjs/browser';
 import "./ContactForm.scss"
 
-const { YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, YOUR_PUBLIC_KEY } = import.meta.env;
+import { FormEvent, useRef, useState } from "react";
+
+import emailjs from '@emailjs/browser';
+
+const { VITE_YOUR_SERVICE_ID, VITE_YOUR_TEMPLATE_ID, VITE_YOUR_PUBLIC_KEY } = import.meta.env;
 
 const Contact = () => {
     const form = useRef<HTMLFormElement | null>(null);
@@ -13,9 +15,9 @@ const Contact = () => {
         event.preventDefault();
 
         if (form.current) {
-            emailjs.sendForm(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID, form.current, YOUR_PUBLIC_KEY)
+            emailjs.sendForm(VITE_YOUR_SERVICE_ID, VITE_YOUR_TEMPLATE_ID, form.current, VITE_YOUR_PUBLIC_KEY)
                 .then((result) => {
-                    console.log(result.text);
+                    //console.log(result.text);
                     setIsSubmitted(true);
                     setIsSuccess(true);
                     if (form.current) {

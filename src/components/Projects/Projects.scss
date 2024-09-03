@@ -41,6 +41,7 @@
 
     &__img-desc-container {
         display: flex;
+        align-items: center;
     }
 
     &__links {
@@ -50,6 +51,7 @@
 
     &__img {
         width: 40%;
+        height: 100%;
         border-radius: 5px;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;

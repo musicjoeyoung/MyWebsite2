@@ -1,8 +1,9 @@
 import "./Bio.scss"
 
+import { BioProps } from "../../types/bio"
 import profilePhoto from "../../assets/images/Joe.jpg"
 
-const Bio = () => {
+const Bio: React.FC<BioProps> = ({ bio }) => {
     return (
         <div className="bio" id="bio">
             <h2>About Me</h2>
@@ -16,7 +17,8 @@ const Bio = () => {
                 />
                 <div>
                     <p className="bio__paragraph">
-                        I am a software engineer with multiple years of experience coding,
+                        {bio}
+                        {/*  I am a software engineer with multiple years of experience coding,
                         debugging, testing, and troubleshooting in application development
                         processes. I work primarily in Javascript with HTML, CSS, React,
                         Redux, Node, Express, PostgreSQL, and have a special interest in
@@ -29,7 +31,7 @@ const Bio = () => {
                         <br />
                         <br />
                         Fun Fact: I am also in the Army Reserves where I am an Executive
-                        Officer for a military band, and we play lots of wonderful music!
+                        Officer for a military band, and we play lots of wonderful music! */}
                     </p>
                 </div>
                 <div className="icon-container">

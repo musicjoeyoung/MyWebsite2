@@ -10,13 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.11.5",
     "@emailjs/browser": "^4.4.1",
+    "@react-three/fiber": "^8.17.6",
+    "@types/three": "^0.168.0",
     "axios": "^1.7.4",
     "react": "^18.2.0",
     "react-countdown-circle-timer": "^3.2.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1",
-    "sass": "^1.77.4"
+    "sass": "^1.77.4",
+    "three": "^0.168.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

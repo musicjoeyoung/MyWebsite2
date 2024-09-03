@@ -1,17 +1,21 @@
 import "./Hero.scss"
 
-const Hero = () => {
+import { HeroProps } from "../../types/hero";
+
+const Hero: React.FC<HeroProps> = ({ name, title, description }) => {
     return (
         <main className="main">
-            {/* <h2 className={welcome}>Hello, my name is </h2> */}
-            <h1 className="main__name" >
-                Joseph Young{" "}
+            <h1 className="main__name">
+                {name}
             </h1>
             <p className="welcome">
-                Software engineer specializing in building and testing exceptional
-                digital experiences. Scroll down to learn more.
+                {title}
+            </p>
+            <p className="welcome">
+                {description}
             </p>
         </main>
     )
 }
-export default Hero
+
+export default Hero;

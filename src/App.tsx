@@ -10,6 +10,7 @@ import Music from './pages/Music/Music'
 import ScrollArrow from './components/ScrollArrow/ScrollArrow'
 import Snippets from './pages/Snippets/Snippets'
 import Timer from './components/Timer/Timer'
+import Timer2 from './components/Timer2/TImer2'
 import Weather from './components/Weather/Weather'
 
 console.log(
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="*" element={<Error404 />} />
         <Route path="/weather" element={<Weather />} />
         <Route path='/timer' element={<Timer />} />
+        <Route path='/timer2' element={<Timer2 />} />
       </Routes>
       {mainLayout && <Footer />}
       {mainLayout && <ScrollArrow />}

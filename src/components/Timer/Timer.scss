@@ -3,7 +3,7 @@
 .timer {
     width: 100vw;
     /* height: calc(100vh - 51px); */
-    background-color: black;
+    background-color: $background2;
     color: $white;
 
     &__controls {

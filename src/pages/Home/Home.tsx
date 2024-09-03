@@ -21,13 +21,34 @@ const Home = () => {
         { label: "Contact", url: "#contact" },
         { label: "Snippets", url: "/snippets" },
     ]
+
+    const bio = <>I am a software engineer with multiple years of experience coding,
+        debugging, testing, and troubleshooting in application development
+        processes. I work primarily in Javascript with HTML, CSS, React,
+        Redux, Node, Express, PostgreSQL, and have a special interest in
+        Web Accessibility.
+        <br />
+        <br />I design, build, and manage websites for a number of
+        clients. In addition to graduating from Fullstack Academy&#39;s
+        Intensive Immersion program, I have also earned certifications in
+        Data Science with Python from MIT via EdX.org.
+        <br />
+        <br />
+        Fun Fact: I am also in the Army Reserves where I am an Executive
+        Officer for a military band, and we play lots of wonderful music!
+    </>
+
     return (
         <>
             <FlashlightComponent />
             <Navbar links={homeLinks} />
-            <Hero />
+            <Hero
+                name="Joseph Young"
+                title="Software Engineer"
+                description="Specializing in building and testing exceptional digital experiences. Scroll down to learn more."
+            />
             <Parallax />
-            <Bio />
+            <Bio bio={bio} />
             <Parallax />
             <Projects />
             <Parallax />

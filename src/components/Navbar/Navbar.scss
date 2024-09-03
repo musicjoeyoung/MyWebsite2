@@ -4,20 +4,99 @@
     position: relative;
     top: 0;
     left: 0;
-    width: 100%;
-    padding: 1rem 0;
+    padding: 1rem;
     background-color: $background;
 
-    &__ul {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 0rem 2rem 1rem 2rem;
-        list-style-type: none;
-        margin-block-start: 0;
+    &__toggle {
+        display: block;
+        cursor: pointer;
+        padding: 0.5rem;
+        height: 2rem;
     }
-}
 
-li a {
-    color: $white;
+    &__burger {
+        width: 25px;
+        height: 3px;
+        background-color: $white;
+        position: relative;
+        transition: 0.3s ease-in-out;
+
+        span {
+            display: block;
+            background-color: $white;
+            height: 3px;
+            margin: 5px 0;
+            transition: 0.3s ease-in-out;
+        }
+
+        &.open span:nth-child(1) {
+            transform: rotate(45deg);
+            top: 8px;
+            position: absolute;
+        }
+
+        &.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        &.open span:nth-child(3) {
+            transform: rotate(-45deg);
+            top: -8px;
+            position: absolute;
+        }
+    }
+
+    &__ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        //background-color: $background;
+        background-color: inherit;
+        //width: 50%;
+        height: auto;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        padding: 2rem;
+        list-style-type: none;
+        margin: 0;
+        display: none;
+
+        &--open {
+            display: flex;
+            transform: translateY(0);
+            background-color: $background2;
+            border: 1px solid whitesmoke;
+
+            @include tablet {
+                border: none;
+                background-color: $background;
+            }
+        }
+    }
+
+    &__li a {
+        color: $white;
+    }
+
+    @include tablet {
+        padding: 1rem 0;
+
+        &__toggle {
+            display: none;
+        }
+
+        &__ul {
+            position: static;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            height: auto;
+            transform: none;
+            padding: 0rem 2rem 1rem 2rem;
+            display: flex;
+        }
+    }
 }

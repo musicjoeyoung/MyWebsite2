@@ -8,7 +8,11 @@
 
     input,
     textarea {
-        width: 50%;
+        width: 90%;
+
+        @include tablet {
+            width: 50%;
+        }
     }
     textarea {
         height: 10rem;
