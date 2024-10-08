@@ -3,9 +3,9 @@ import "./Bio.scss"
 import { BioProps } from "../../types/bio"
 import profilePhoto from "../../assets/images/Joe.jpg"
 
-const Bio: React.FC<BioProps> = ({ bio }) => {
+const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
     return (
-        <div className="bio" id="bio">
+        <div className="bio" id="bio" style={{ backgroundColor: backgroundColor }}>
             <h2>About Me</h2>
             <div className="bio__profile">
                 <img
@@ -18,20 +18,6 @@ const Bio: React.FC<BioProps> = ({ bio }) => {
                 <div>
                     <p className="bio__paragraph">
                         {bio}
-                        {/*  I am a software engineer with multiple years of experience coding,
-                        debugging, testing, and troubleshooting in application development
-                        processes. I work primarily in Javascript with HTML, CSS, React,
-                        Redux, Node, Express, PostgreSQL, and have a special interest in
-                        Web Accessibility.
-                        <br />
-                        <br />I design, build, and manage websites for a number of
-                        clients. In addition to graduating from Fullstack Academy&#39;s
-                        Intensive Immersion program, I have also earned certifications in
-                        Data Science with Python from MIT via EdX.org.
-                        <br />
-                        <br />
-                        Fun Fact: I am also in the Army Reserves where I am an Executive
-                        Officer for a military band, and we play lots of wonderful music! */}
                     </p>
                 </div>
                 <div className="icon-container">

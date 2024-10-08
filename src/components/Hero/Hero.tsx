@@ -2,9 +2,9 @@ import "./Hero.scss"
 
 import { HeroProps } from "../../types/hero";
 
-const Hero: React.FC<HeroProps> = ({ name, title, description }) => {
+const Hero: React.FC<HeroProps> = ({ name, title, description, backgroundColor }) => {
     return (
-        <main className="main">
+        <main className="main" style={{ backgroundColor: backgroundColor }}>
             <h1 className="main__name">
                 {name}
             </h1>

@@ -1,3 +1,4 @@
 export interface BioProps {
-    bio: React.ReactNode
+    bio: React.ReactNode,
+    backgroundColor?: string;
 }

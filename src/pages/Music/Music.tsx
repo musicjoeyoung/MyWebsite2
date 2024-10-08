@@ -36,7 +36,7 @@ const Music = () => {
                 backgroundColor="black"
             />
             <Parallax />
-            <Bio bio={bio} />
+            <Bio bio={bio} backgroundColor="black" />
             <Parallax />
             <Scores />
             <Parallax />

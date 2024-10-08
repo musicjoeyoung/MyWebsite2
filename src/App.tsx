@@ -38,7 +38,7 @@ const App = () => {
         <Route path='/timer' element={<Timer />} />
         <Route path='/timer2' element={<Timer2 />} />
       </Routes>
-      {mainLayout && <Footer />}
+      {mainLayout && <Footer backgroundColor="black" />}
       {mainLayout && <ScrollArrow />}
 
     </>
