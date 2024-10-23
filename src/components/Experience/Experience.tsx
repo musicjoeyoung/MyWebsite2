@@ -5,9 +5,11 @@ const Experience = () => {
         <div className="experience .in-view" id="experience">
             <h2>Experience</h2>
             <ul className="experience__ul" >
-                <li >
-                    Educator, Software Engineering - BrainStation - New York,
-                    NY - March 2023 - current
+                <details >
+                    <summary>
+                        <span>Educator, Software Engineering - BrainStation</span> - New York,
+                        NY - March 2023 - current
+                    </summary>
                     <ul>
                         <li>
                             Delivers lectures and mentors the next wave of engineering
@@ -20,10 +22,12 @@ const Experience = () => {
                             up-to-date skills in development to students.
                         </li>
                     </ul>
-                </li>
-                <li >
-                    Associate Educator, Software Engineering - BrainStation - New York,
-                    NY - March 2023 - current
+                </details>
+                <details >
+                    <summary>
+                        <span>Associate Educator, Software Engineering - BrainStation</span> - New York,
+                        NY - March 2023 - January 2024
+                    </summary>
                     <ul>
                         <li>
                             Delivers lectures and mentors the next wave of engineering
@@ -32,10 +36,11 @@ const Experience = () => {
                             technologies.
                         </li>
                     </ul>
-                </li>
-                <li >
-                    Software Engineer - Wunderkind – New York, NY - Jan 2022 - Jan 2023
-                    <ul>
+                </details>
+                <details >
+                    <summary>
+                        <span>Software Engineer - Wunderkind</span> – New York, NY - Jan 2022 - Jan 2023
+                    </summary>                    <ul>
                         <li>
                             Successfully integrated internal platform with client campaigns
                             with vanilla Javascript and in-house tools while writing
@@ -55,19 +60,21 @@ const Experience = () => {
                             companies
                         </li>
                     </ul>
-                </li>
-                <li >
-                    Freelance Web Designer & Manager - New York, NY - Mar 2020 - current
-                    <ul>
+                </details>
+                <details >
+                    <summary>
+                        <span>Freelance Web Designer & Manager</span> - New York, NY - Mar 2020 - current
+                    </summary>                    <ul>
                         <li>
                             Designs, builds, and maintains various websites for clients
                             using Javascript, React, HTML, and CSS
                         </li>
                     </ul>
-                </li>
-                <li >
-                    Web Designer & Manager - US Army, Reserves - Nov 2004 - current
-                    <ul>
+                </details>
+                <details >
+                    <summary>
+                        <span>Web Designer & Manager - US Army, Reserves </span>- Nov 2004 - current
+                    </summary>                    <ul>
                         <li>
                             Website Manager - Designs, builds, and maintains website for the
                             78th Army Reserves Band using Javascript, React, HTML and CSS
@@ -82,7 +89,7 @@ const Experience = () => {
                             events in the tri-state area
                         </li>
                     </ul>
-                </li>
+                </details>
             </ul>
         </div>
     )

@@ -2,6 +2,7 @@ import './App.scss'
 
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 
+import AllReviews from './pages/AllReviews/AllReviews'
 import Error404 from './pages/Error404/Error404'
 import Footer from './components/Footer/Footer'
 import Home from "./pages/Home/Home"
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/weather" element={<Weather />} />
         <Route path='/timer' element={<Timer />} />
         <Route path='/timer2' element={<Timer2 />} />
+        <Route path="/all-reviews" element={<AllReviews />} />
       </Routes>
       {mainLayout && <Footer backgroundColor="black" />}
       {mainLayout && <ScrollArrow />}

@@ -9,6 +9,7 @@ import { Link } from "../../types/link"
 import Navbar from "../../components/Navbar/Navbar"
 import Parallax from "../../components/Parallax/Parallax"
 import Projects from "../../components/Projects/Projects"
+import Reviews from "../../components/Reviews/Reviews"
 
 const Home = () => {
 
@@ -17,15 +18,16 @@ const Home = () => {
         { label: "About", url: "#about" },
         { label: "Projects", url: "#projects" },
         { label: "Experience", url: "#experience" },
+        { label: "Reviews", url: "#reviews" },
         { label: "Resume", url: "#resume" },
         { label: "Contact", url: "#contact" },
-        { label: "Snippets", url: "/snippets" },
+        /* { label: "Snippets", url: "/snippets" }, */
+
     ]
 
     const bio = <>I am a software engineer with multiple years of experience coding,
         debugging, testing, and troubleshooting in application development
-        processes. I work primarily in Javascript with HTML, CSS, React,
-        Redux, Node, Express, PostgreSQL, and have a special interest in
+        processes. I work primarily in Javascript & TypeScript with HTML, CSS, SASS, React, Node, Express, PostgreSQL, MySQL, jQuery, MongoDB, Zod, Drizzle, NextJS and have a special interest in
         Web Accessibility.
         <br />
         <br />I design, build, and manage websites for a number of
@@ -53,6 +55,8 @@ const Home = () => {
             <Projects />
             <Parallax />
             <Experience />
+            <Parallax />
+            <Reviews />
             <Parallax />
             <Contact />
             <Parallax />

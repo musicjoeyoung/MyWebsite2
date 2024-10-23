@@ -126,6 +126,14 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                         width={60}
                         height={60}
                     />
+                    <img
+                        className="icon-container__icon"
+                        src="https://images.ctfassets.net/sw4ojjqn6qvl/18smWj9R0PQ0yfsQurVCeu/3f47e4f9d73617ccd9a62be2c20de826/drizzle-logo.svg"
+                        alt="Drizzle"
+                        width={60}
+                        height={60}
+                    />
+
                 </div>
             </div>
         </div>
