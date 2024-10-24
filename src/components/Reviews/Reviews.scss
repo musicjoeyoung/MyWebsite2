@@ -7,15 +7,32 @@
         box-shadow:
             rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
             rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-        background-color: $review-background;
+        //background-color: $review-background;
         padding: 1rem;
         margin: 1rem;
         border-radius: 1rem;
         text-align: left;
+        font-style: italic;
 
         @include desktop {
             width: 60%;
             margin: 1rem auto;
+        }
+
+        @for $i from 1 through 5 {
+            &:nth-child(5n + #{$i - 1}) {
+                @if $i == 1 {
+                    background-color: $review-background1;
+                } @else if $i == 2 {
+                    background-color: $review-background2;
+                } @else if $i == 3 {
+                    background-color: $review-background3;
+                } @else if $i == 4 {
+                    background-color: $review-background4;
+                } @else if $i == 5 {
+                    background-color: $review-background5;
+                }
+            }
         }
     }
 

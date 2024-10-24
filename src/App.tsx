@@ -40,7 +40,7 @@ const App = () => {
         <Route path='/timer2' element={<Timer2 />} />
         <Route path="/all-reviews" element={<AllReviews />} />
       </Routes>
-      {mainLayout && <Footer backgroundColor="black" />}
+      {mainLayout && <Footer /* backgroundColor="black" */ />}
       {mainLayout && <ScrollArrow />}
 
     </>

@@ -1,10 +1,12 @@
 import "./IconContainer.scss"
-import linkedInWhite from "../../assets/images/linkedinWhite.png"
-import linkedInBlack from "../../assets/images/linkedinBlack.png"
-import githubWhite from "../../assets/images/githubWhite.png"
-import githubBlack from "../../assets/images/githubBlack.png"
+
+//import githubBlack from "../../assets/images/githubBlack.png"
 import emailWhite from "../../assets/images/emailWhite.png"
-import emailBlack from "../../assets/images/emailBlack.png"
+//import linkedInBlack from "../../assets/images/linkedinBlack.png"
+import githubWhite from "../../assets/images/githubWhite.png"
+import linkedInWhite from "../../assets/images/linkedinWhite.png"
+
+//import emailBlack from "../../assets/images/emailBlack.png"
 
 const IconContainer = () => {
     return (

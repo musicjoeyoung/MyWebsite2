@@ -10,7 +10,7 @@ const API_KEY = import.meta.env.VITE_APP_OPEN_WEATHER_API_KEY;
 const Weather = () => {
     const [weather, setWeather] = useState<WeatherState | null>(null)
     const [zipCode, setZipCode] = useState("")
-    const [countryCode, setCountryCode] = useState("")
+    const [countryCode, /* setCountryCode */] = useState("")
 
     const URL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&units=imperial&appid=${API_KEY}`;
 

@@ -25,7 +25,18 @@ const Navbar: React.FC<NavbarProps> = ({ links, backgroundColor }) => {
             <ul className={`navbar__ul ${isOpen ? "navbar__ul--open" : ""}`}>
                 {links.map((link, index) => (
                     <li key={index} className="navbar__li">
-                        <a href={link.url}>{link.label}</a>
+                        {link.label === "Resume" ? (
+                            <a
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                download
+                            >
+                                {link.label}
+                            </a>
+                        ) : (
+                            <a href={link.url}>{link.label}</a>
+                        )}
                     </li>
                 ))}
             </ul>

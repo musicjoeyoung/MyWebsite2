@@ -19,7 +19,7 @@ const Home = () => {
         { label: "Projects", url: "#projects" },
         { label: "Experience", url: "#experience" },
         { label: "Reviews", url: "#reviews" },
-        { label: "Resume", url: "#resume" },
+        { label: "Resume", url: "/Joseph-Young-resume-2024.pdf" },
         { label: "Contact", url: "#contact" },
         /* { label: "Snippets", url: "/snippets" }, */
 
