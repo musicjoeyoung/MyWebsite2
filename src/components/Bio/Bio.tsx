@@ -5,7 +5,7 @@ import profilePhoto from "../../assets/images/Joe.jpg"
 
 const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
     return (
-        <div className="bio" id="bio" style={{ backgroundColor: backgroundColor }}>
+        <div className="bio" id="about" style={{ backgroundColor: backgroundColor }}>
             <h2>About Me</h2>
             <div className="bio__profile">
                 <img

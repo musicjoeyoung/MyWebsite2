@@ -8,11 +8,11 @@ const Hero: React.FC<HeroProps> = ({ name, title, description, backgroundColor }
             <h1 className="main__name">
                 {name}
             </h1>
-            <p className="welcome">
+            {/*             <p className="welcome">
                 {title}
-            </p>
+            </p> */}
             <p className="welcome">
-                {description}
+                {title} {description}
             </p>
         </main>
     )

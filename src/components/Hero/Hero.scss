@@ -1,17 +1,23 @@
 @use "../../styles/partials/index" as *;
 
 .main {
+    text-align: left;
     padding: 2rem;
-    background-color: $background;
-    color: $white;
+    background-color: #073b4c;
+    color: whitesmoke;
+    min-height: 100vh;
+    padding: 0rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     &__name {
         font-size: clamp(4rem, 1.5vw, 5rem);
         font-family: "Raleway", sans-serif;
-        //font-family: "Unica One", sans-serif;
+        font-weight: normal;
         color: $white;
         margin-block: 0;
-        text-shadow: 3px 3px 3px rgb(121 125 152);
+        //text-shadow: 3px 3px 3px rgb(121 125 152);
     }
 }
 

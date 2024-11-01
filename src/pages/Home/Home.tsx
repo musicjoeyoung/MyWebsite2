@@ -47,7 +47,7 @@ const Home = () => {
             <Hero
                 name="Joseph Young"
                 title="Software Engineer"
-                description="Specializing in building and testing exceptional digital experiences. Scroll down to learn more."
+                description="specializing in building and testing exceptional digital experiences. Scroll down to learn more."
             />
             <Parallax />
             <Bio bio={bio} />
