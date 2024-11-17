@@ -99,4 +99,18 @@
             display: flex;
         }
     }
+
+    &__logo-a {
+        width: 14%;
+        text-align: left;
+
+        @include tablet {
+            width: 7%;
+            margin-top: 7px;
+        }
+    }
+
+    &__logo {
+        width: 50%;
+    }
 }

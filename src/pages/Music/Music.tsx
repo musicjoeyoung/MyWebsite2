@@ -18,13 +18,9 @@ const Music = () => {
         { label: "Contact", url: "#contact" },
     ]
 
-    const bio = <>Musician
-        <br />
-        <br />
-        Guitar
-        <br />
-        <br />
-        Music
+    const bio = <>
+        A composer and performer, I grew up in Indianapolis, Indiana, surrounded by bluegrass, jazz, and classical music that shaped my passion for music. Now based in New York City, I create original music that blends these influences with inspiration from both classical and contemporary artists. My work has taken me across the United States, Canada, and Europe, sharing my music with audiences far and wide and performing on guitar, trumpet, banjo, and mandolin.
+
     </>
     return (
         <>

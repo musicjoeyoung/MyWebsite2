@@ -2,8 +2,9 @@ import "./Experience.scss"
 
 const Experience = () => {
     return (
-        <div className="experience .in-view" id="experience">
+        <div className="experience" id="experience">
             <h2>Experience</h2>
+            <p>(click roles to see more information)</p>
             <ul className="experience__ul" >
                 <details >
                     <summary>

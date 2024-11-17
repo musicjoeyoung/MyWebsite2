@@ -1,6 +1,7 @@
 import "./Navbar.scss"
 
 import { Link } from "../../types/link"
+import jy from "../../assets/images/JY.png"
 import { useState } from "react"
 
 interface NavbarProps {
@@ -15,6 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ links, backgroundColor }) => {
     };
     return (
         <nav className="navbar" style={{ backgroundColor }}>
+
             <div className="navbar__toggle" onClick={toggleMenu}>
                 <div className={`navbar__burger ${isOpen ? "open" : ""}`}>
                     <span></span>
@@ -23,6 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({ links, backgroundColor }) => {
                 </div>
             </div>
             <ul className={`navbar__ul ${isOpen ? "navbar__ul--open" : ""}`}>
+                <a href="/welcome" className="navbar__logo-a"><img src={jy} alt="JY logo" className="navbar__logo" /></a>
                 {links.map((link, index) => (
                     <li key={index} className="navbar__li">
                         {link.label === "Resume" ? (
