@@ -1,6 +1,6 @@
 import "./Reviews.scss";
 
-import reviews from "../../data/reviews.json";
+import reviews from "../../assets/data/reviews.json";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
