@@ -4,12 +4,10 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 
 import AllReviews from './pages/AllReviews/AllReviews'
 import Error404 from './pages/Error404/Error404'
-import Footer from './components/Footer/Footer'
 import Home from "./pages/Home/Home"
 import Landing from "./pages/Landing/Landing"
 import Music from './pages/Music/Music'
 import ScrollArrow from './components/ScrollArrow/ScrollArrow'
-import Snippets from './pages/Snippets/Snippets'
 import Timer from './components/Timer/Timer'
 import Timer2 from './components/Timer2/TImer2'
 import Weather from './components/Weather/Weather'
@@ -33,14 +31,12 @@ const App = () => {
         <Route path="/welcome" element={<Landing />} />
         <Route path="/" element={<Home />} />
         <Route path="/music" element={<Music />} />
-        <Route path="/snippets" element={<Snippets />} />
         <Route path="*" element={<Error404 />} />
         <Route path="/weather" element={<Weather />} />
         <Route path='/timer' element={<Timer />} />
         <Route path='/timer2' element={<Timer2 />} />
         <Route path="/all-reviews" element={<AllReviews />} />
       </Routes>
-      {mainLayout && <Footer /* backgroundColor="black" */ />}
       {mainLayout && <ScrollArrow />}
 
     </>

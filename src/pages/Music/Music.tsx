@@ -2,6 +2,7 @@ import "./Music.scss"
 
 import Audio from "../../components/Audio/Audio"
 import Bio from "../../components/Bio/Bio"
+import Footer from "../../components/Footer/Footer"
 import Hero from "../../components/Hero/Hero"
 import { Link } from "../../types/link"
 import Navbar from "../../components/Navbar/Navbar"
@@ -37,6 +38,7 @@ const Music = () => {
             <Scores />
             <Parallax />
             <Audio />
+            <Footer backgroundColor="black" />
 
         </>
     )

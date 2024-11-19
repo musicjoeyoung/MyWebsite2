@@ -4,6 +4,7 @@ import Bio from "../../components/Bio/Bio"
 import Contact from "../../components/Contact/Contact"
 import Experience from "../../components/Experience/Experience"
 import FlashlightComponent from "../../components/Flashlight/Flashlight"
+import Footer from "../../components/Footer/Footer"
 import Hero from "../../components/Hero/Hero"
 import { Link } from "../../types/link"
 import Navbar from "../../components/Navbar/Navbar"
@@ -21,7 +22,6 @@ const Home = () => {
         { label: "Reviews", url: "#reviews" },
         { label: "Resume", url: "/Joseph-Young-resume-2024.pdf" },
         { label: "Contact", url: "#contact" },
-        /* { label: "Snippets", url: "/snippets" }, */
 
     ]
 
@@ -60,6 +60,7 @@ const Home = () => {
             <Parallax />
             <Contact />
             <Parallax />
+            <Footer />
         </>
     )
 }
