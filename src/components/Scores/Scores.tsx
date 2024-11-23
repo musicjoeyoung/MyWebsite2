@@ -1,6 +1,6 @@
 import "./Scores.scss"
 
-import PDFViewer from "../PDFViewer/PDFViewer"
+// /import PDFViewer from "../PDFViewer/PDFViewer"
 
 const Scores = () => {
 
