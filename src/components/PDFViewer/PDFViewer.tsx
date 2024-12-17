@@ -1,32 +1,74 @@
-import "./PDFViewer.scss"
 import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
-import { Viewer, Worker } from "@react-pdf-viewer/core";
+import { Viewer, Worker } from '@react-pdf-viewer/core';
 
-//import music from "../../assets/documents/Short Term Memory 22OCT19 - Score.pdf"
-import music2 from "../../assets/documents/MarShawn.pdf"
-import packageJson from '../../../package.json';
+import React from 'react';
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
+import packageJson from "../../../package.json";
 import { pageNavigationPlugin } from '@react-pdf-viewer/page-navigation';
+import { zoomPlugin } from '@react-pdf-viewer/zoom';
 
 const pdfjsVersion = packageJson.dependencies['pdfjs-dist'];
 
 
-const PDFViewer = () => {
-    const pageNavigation = pageNavigationPlugin();
-    const { CurrentPageLabel } = pageNavigation;
-    const { NumberOfPages } = pageNavigation;
-
-    return (
-        <div>
-            <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.min.js`}>
-
-                <Viewer fileUrl={music2} plugins={[pageNavigation]} />
-            </Worker>
-
-            <div style={{ marginTop: '10px', textAlign: 'center' }}>
-                Page <CurrentPageLabel /> of <NumberOfPages />
-            </div>
-        </div>
-    )
+interface PDFViewerProps {
+    pdfUrl: string;
 }
-export default PDFViewer
+
+const PDFViewer: React.FC<PDFViewerProps> = ({ pdfUrl }) => {
+    const pageNavigationPluginInstance = pageNavigationPlugin();
+    const { GoToNextPage, GoToPreviousPage } = pageNavigationPluginInstance;
+    const defaultLayoutPluginInstance = defaultLayoutPlugin();
+    const zoomPluginInstance = zoomPlugin();
+
+    /*     return (
+            <div className="h-[calc(100vh-16rem)] bg-white rounded-lg shadow-lg p-4">
+                <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.min.js`}>        <Viewer
+                    fileUrl={pdfUrl}
+                    plugins={[defaultLayoutPluginInstance, zoomPluginInstance]}
+                    defaultScale={1.2}
+                />
+                </Worker>
+            </div>
+        );
+    }; */
+    return (
+        <div className="h-[calc(100vh-16rem)] bg-white rounded-lg shadow-lg p-4">
+            <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.min.js`}>
+                <div className="flex justify-between mb-2">
+                    <GoToPreviousPage>
+                        {(props) => (
+                            <button
+                                className="px-4 py-2 bg-blue-500 text-white rounded"
+                                onClick={props.onClick}
+                                disabled={props.isDisabled}
+                            >
+                                Previous
+                            </button>
+                        )}
+                    </GoToPreviousPage>
+                    <GoToNextPage>
+                        {(props) => (
+                            <button
+                                className="px-4 py-2 bg-blue-500 text-white rounded"
+                                onClick={props.onClick}
+                                disabled={props.isDisabled}
+                            >
+                                Next
+                            </button>
+                        )}
+                    </GoToNextPage>
+                </div>
+                <Viewer
+                    fileUrl={pdfUrl}
+                    plugins={[defaultLayoutPluginInstance, zoomPluginInstance, pageNavigationPluginInstance]}
+                    defaultScale={1.2}
+                />
+            </Worker>
+        </div>
+    );
+};
+export default PDFViewer;
+
+

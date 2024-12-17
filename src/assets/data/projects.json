@@ -1,9 +1,16 @@
 [
-      {
+  {
+    "title": "HONC.ai",
+    "url": "https://honcathon.netlify.app/",
+    "repo_url": "https://github.com/musicjoeyoung/HONC",
+    "description": "This application was built for the HONCathon, using the HONC stack: Hono, Drizzle, Neon, Cloudflare, and Fiberplane, which makes use of Cloudflare's Workers and AI. The client-side repo is at: https://github.com/musicjoeyoung/HONC-client",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1734464996/Screenshot_2024-12-17_at_2.49.47_PM_erlnrz.png"
+  },
+  {
     "title": "CodeCards",
     "url": "https://sensational-pegasus-16a760.netlify.app/",
     "repo_url": "https://github.com/musicjoeyoung/Flashcards",
-    "description": "Welcome to CodeCards, the ultimate learning tool for mastering JavaScript! Whether you're a beginner just starting your coding journey or an experienced developer looking to deepen your understanding of JavaScript, our application is designed to help you learn and reinforce key concepts with ease.",
+    "description": "Welcome to CodeCards, the ultimate learning tool for mastering JavaScript! Whether you're a beginner just starting your coding journey or an experienced developer looking to deepen your understanding of JavaScript, our application is designed to help you learn and reinforce key concepts with ease. The server-side repo is at: https://github.com/musicjoeyoung/flash-cards-server",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/CodeCards_q1k9rm.png"
   },
   {
@@ -13,14 +20,14 @@
     "description": "Website for the US Army 78th Army Band",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572917/78th-Army-Band_sfihan.png"
   },
-    {
+  {
     "title": "Jay Cowit",
     "url": "https://jaycowit.com/",
     "repo_url": "https://github.com/musicjoeyoung/jaycowit",
     "description": "Portfolio website for Jay Cowit",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/Jay-Cowit_atvhyw.png"
   },
-    {
+  {
     "title": "Jackie Martin",
     "url": "https://audiojacke.com/",
     "repo_url": "https://github.com/musicjoeyoung/jackie-martin",
@@ -47,21 +54,26 @@
     "repo_url": "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Weather/Weather.tsx",
     "description": "A weather app built using the OpenWeather API",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723735607/Weather_fgld0s.png"
-
   },
-    {
+  {
     "title": "Timer",
     "url": "/timer",
     "repo_url": "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Timer/Timer.tsx",
     "description": "A countdown timer I use when teaching",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723738152/Screenshot_2024-08-15_at_12.09.03_PM_qmisf1.png"
-
+  },
+  {
+    "title": "Timer2",
+    "url": "/timer2",
+    "repo_url": "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Timer2/TImer2.tsx",
+    "description": "Another countdown timer I've use when teaching",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1734464567/Screenshot_2024-12-17_at_2.42.15_PM_wod9zq.png"
   },
   {
     "title": "Team Generator",
     "url": "https://github.com/musicjoeyoung/Team-Generator",
     "repo_url": "https://github.com/musicjoeyoung/Team-Generator",
-    "description":"A Node.js tool I use for teaching that randomly generates teams as well as student folders",
+    "description": "A Node.js tool I use for teaching that randomly generates teams as well as student folders",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723738575/Screenshot_2024-08-15_at_12.15.52_PM_u1ljyr.png"
   },
   {
@@ -78,19 +90,18 @@
     "description": "Just the silliest app you'll ever find on the internet",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572915/USA-Beyonce%CC%81_rpfwln.png"
   },
-    {
+  {
     "title": "Music Memory",
     "url": "https://taupe-starship-4cf747.netlify.app/",
     "repo_url": "https://github.com/musicjoeyoung/MusicMemoryGame",
     "description": "Built during a 24-hour hackathon through Mintbean.io early in my coding career, this is a game that tests the user's ability to strengthen their tonal and visual memory.",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/Music-Memory_fnvzuy.png"
   },
-    {
+  {
     "title": "Joseph M Young - NextJS portfolio",
     "url": "https://fa0ae40a-627f-4bbf-ad1e-abe81219724d.netlify.app/",
     "repo_url": "https://github.com/musicjoeyoung/MyWebsite",
     "description": "This is my previous portfolio website built with NextJS",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/JosephMYoung-NextJS_gwmdrk.png"
   }
-
 ]
