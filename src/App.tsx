@@ -9,7 +9,7 @@ import Landing from "./pages/Landing/Landing"
 import Music from './pages/Music/Music'
 import ScrollArrow from './components/ScrollArrow/ScrollArrow'
 import Timer from './components/Timer/Timer'
-import Timer2 from './components/Timer2/TImer2'
+import Timer2 from './components/Timer2/Timer2'
 import Weather from './components/Weather/Weather'
 
 console.log(
