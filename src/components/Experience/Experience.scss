@@ -4,13 +4,82 @@
     @include section;
 
     &__ul {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        line-height: 2rem;
+        details {
+            margin-bottom: 1.2rem;
+            border-radius: 6px;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-        span {
-            font-weight: 800;
+            &[open] {
+                summary {
+                    background-color: #0a526a;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    color: #ecf0f1;
+
+                    &::after {
+                        transform: rotate(90deg);
+                        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                    }
+
+                    span {
+                        color: #ecf0f1;
+                    }
+                }
+            }
+
+            summary {
+                padding: 1.2rem;
+                cursor: pointer;
+                background-color: #0a526a;
+                border-radius: 6px;
+                border: 1px solid #2c3e50;
+                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                position: relative;
+                list-style: none;
+                color: #ecf0f1;
+                text-align: left;
+
+                &:hover {
+                    background-color: #107597;
+                }
+
+                &::after {
+                    content: "›";
+                    position: absolute;
+                    right: 0.7rem;
+                    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                    font-size: 1.4rem;
+                    color: #ecf0f1;
+                }
+
+                span {
+                    font-weight: 600;
+                    color: #ecf0f1;
+                }
+            }
+
+            ul {
+                padding: 1.2rem;
+                border: 1px solid #2c3e50;
+                border-top: none;
+                border-bottom-left-radius: 6px;
+                border-bottom-right-radius: 6px;
+                background-color: #0b495e;
+                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                color: #ecf0f1;
+
+                li {
+                    margin-bottom: 0.8rem;
+                    line-height: 1.6;
+                    color: #ecf0f1;
+                    text-align: left;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
         }
     }
 }
