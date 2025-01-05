@@ -3,7 +3,7 @@
     "title": "HONC.ai",
     "url": "https://honcathon.netlify.app/",
     "repo_url": "https://github.com/musicjoeyoung/HONC",
-    "description": "This application was built for the HONCathon, using the HONC stack: Hono, Drizzle, Neon, Cloudflare, and Fiberplane, which makes use of Cloudflare's Workers and AI. The client-side repo is at: https://github.com/musicjoeyoung/HONC-client",
+    "description": "**Winner in the AI category of the Honcathon!** This application was built for the HONCathon, using the HONC stack: Hono, Drizzle, Neon, Cloudflare, and Fiberplane, which makes use of Cloudflare's Workers and AI. The client-side repo is at: https://github.com/musicjoeyoung/HONC-client",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1734464996/Screenshot_2024-12-17_at_2.49.47_PM_erlnrz.png"
   },
   {
