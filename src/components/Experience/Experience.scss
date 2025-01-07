@@ -4,6 +4,7 @@
     @include section;
 
     &__ul {
+        padding-inline: 0;
         details {
             margin-bottom: 1.2rem;
             border-radius: 6px;
