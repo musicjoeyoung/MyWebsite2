@@ -22,13 +22,7 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                 </div>
                 {!window.location.pathname.includes('/music') && (
                     <div className="icon-container">
-                        <img
-                            className="icon-container__icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                            alt="Javscript"
-                            width={60}
-                            height={60}
-                        />
+                        {/* Frontend/UI Technologies */}
                         <img
                             className="icon-container__icon"
                             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
@@ -46,7 +40,14 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                         <img
                             className="icon-container__icon"
                             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
-                            alt="CSS3"
+                            alt="Sass"
+                            width={60}
+                            height={60}
+                        />
+                        <img
+                            className="icon-container__icon"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg"
+                            alt="jQuery"
                             width={60}
                             height={60}
                         />
@@ -64,10 +65,19 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                             width={60}
                             height={60}
                         />
+
+                        {/* Backend/Runtime */}
                         <img
                             className="icon-container__icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg"
-                            alt="Canva"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                            alt="Node JS"
+                            width={60}
+                            height={60}
+                        />
+                        <img
+                            className="icon-container__icon"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bun/bun-original.svg"
+                            alt="Bun"
                             width={60}
                             height={60}
                         />
@@ -80,15 +90,24 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                         />
                         <img
                             className="icon-container__icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                            alt="Node JS"
+                            src="https://hono.dev/images/logo-small.png"
+                            alt="Hono"
+                            width={60}
+                            height={60}
+                        />
+
+                        {/* Programming Languages */}
+                        <img
+                            className="icon-container__icon"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg"
+                            alt="JavaScript"
                             width={60}
                             height={60}
                         />
                         <img
                             className="icon-container__icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
-                            alt="PostgreSQL"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                            alt="TypeScript"
                             width={60}
                             height={60}
                         />
@@ -99,31 +118,26 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                             width={60}
                             height={60}
                         />
+
+                        {/* Databases */}
                         <img
                             className="icon-container__icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg"
-                            alt="jQuery"
-                            width={60}
-                            height={60}
-                        />
-                        <img
-                            className="icon-container__icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                            alt="jQuery"
-                            width={60}
-                            height={60}
-                        />
-                        <img
-                            className="icon-container__icon"
-                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                            alt="jQuery"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
+                            alt="PostgreSQL"
                             width={60}
                             height={60}
                         />
                         <img
                             className="icon-container__icon"
                             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-                            alt="jQuery"
+                            alt="MySQL"
+                            width={60}
+                            height={60}
+                        />
+                        <img
+                            className="icon-container__icon"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                            alt="MongoDB"
                             width={60}
                             height={60}
                         />
@@ -131,6 +145,52 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                             className="icon-container__icon"
                             src="https://images.ctfassets.net/sw4ojjqn6qvl/18smWj9R0PQ0yfsQurVCeu/3f47e4f9d73617ccd9a62be2c20de826/drizzle-logo.svg"
                             alt="Drizzle"
+                            width={60}
+                            height={60}
+                        />
+
+                        {/* Cloud/Infrastructure */}
+                        <img
+                            className="icon-container__icon"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg"
+                            alt="Cloudflare"
+                            width={60}
+                            height={60}
+                        />
+                        <img
+                            className="icon-container__icon"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflareworkers/cloudflareworkers-original-wordmark.svg"
+                            alt="Cloudflare Workers"
+                            width={60}
+                            height={60}
+                        />
+                        <img
+                            className="icon-container__icon"
+                            src="https://avatars.githubusercontent.com/u/77690634?s=48&v=4"
+                            alt="Neon"
+                            width={60}
+                            height={60}
+                        />
+
+                        {/* Tools */}
+                        <img
+                            className="icon-container__icon"
+                            src="https://zod.dev/logo.svg"
+                            alt="Zod"
+                            width={60}
+                            height={60}
+                        />
+                        <img
+                            className="icon-container__icon"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg"
+                            alt="Canva"
+                            width={60}
+                            height={60}
+                        />
+                        <img
+                            className="icon-container__icon"
+                            src="https://avatars.githubusercontent.com/u/61152955?s=200&v=4"
+                            alt="Fiberplane"
                             width={60}
                             height={60}
                         />
