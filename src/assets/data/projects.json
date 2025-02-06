@@ -1,5 +1,12 @@
 [
   {
+    "title": "Valentine's Day Cards",
+    "url": "https://valentinesdaycards.netlify.app/",
+    "repo_url": "https://github.com/musicjoeyoung/valentines-day-cards",
+    "description": "A Valentine's Day card generator where anyone can contribute to a public gallery. Made with Fiberplane's HONC stack and React for the client-side.",
+    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1738864745/Screenshot_2025-02-06_at_12.58.24_PM_wmtg70.png"
+  },
+  {
     "title": "HONC.ai",
     "url": "https://honcathon.netlify.app/",
     "repo_url": "https://github.com/musicjoeyoung/HONC",
