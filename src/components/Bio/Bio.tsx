@@ -90,7 +90,7 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                         />
                         <img
                             className="icon-container__icon"
-                            src="https://hono.dev/images/logo-small.png"
+                            src="https://hono.dev/images/logo.svg"//test
                             alt="Hono"
                             width={60}
                             height={60}
