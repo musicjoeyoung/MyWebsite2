@@ -31,7 +31,9 @@ const Projects: React.FC = () => {
                     <div className="projects__project" key={index}>
                         <h3>{project.title}</h3>
                         <div className="projects__img-desc-container">
-                            <img className="projects__img" src={project.img_url} alt={project.title} />
+                            <a href={project.url} target="_blank" className="projects__img-a">
+                                <img className="projects__img" src={project.img_url} alt={project.title} />
+                            </a>
                             <p className="projects__desc">{project.description}</p>
                         </div>
                         <div className="projects__links">

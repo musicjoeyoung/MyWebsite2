@@ -37,6 +37,10 @@
     &__desc {
         margin-left: 1rem;
         text-align: left;
+
+        @include tablet {
+            width: 50%;
+        }
     }
 
     &__img-desc-container {
@@ -64,9 +68,13 @@
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
         -o-border-radius: 5px;
+    }
+
+    &__img-a {
+        width: 100%;
 
         @include tablet {
-            width: 40%;
+            width: 50%;
         }
     }
 
