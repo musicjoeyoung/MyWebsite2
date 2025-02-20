@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
     const [showAll, setShowAll] = useState(false);
 
     const handleToggle = (): void => {
-        setShowAll(!showAll);
+        setTimeout(() => setShowAll(!showAll), 50);
 
         if (showAll) {
             document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
