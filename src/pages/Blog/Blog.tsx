@@ -1,5 +1,5 @@
 //import BlogTest from './blogtest.mdx';
-import BlogTest from "./blogtest2.mdx"
+import BlogTest from "../../assets/blogs/blogtest2.mdx";
 
 const Blog: React.FC = () => {
     return (
