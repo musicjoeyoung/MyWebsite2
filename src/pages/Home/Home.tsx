@@ -22,6 +22,7 @@ const Home = () => {
         { label: "Reviews", url: "#reviews" },
         { label: "Resume", url: "/Joseph-Young-resume-2025.pdf" },
         { label: "Contact", url: "#contact" },
+        { label: "Blog", url: "/blog" }
 
     ]
 

@@ -3,6 +3,7 @@ import './App.scss'
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 
 import AllReviews from './pages/AllReviews/AllReviews'
+import Blog from './pages/Blog/Blog'
 import Error404 from './pages/Error404/Error404'
 import Home from "./pages/Home/Home"
 import Landing from "./pages/Landing/Landing"
@@ -36,6 +37,7 @@ const App = () => {
         <Route path='/timer' element={<Timer />} />
         <Route path='/timer2' element={<Timer2 />} />
         <Route path="/all-reviews" element={<AllReviews />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       {mainLayout && <ScrollArrow />}
 
