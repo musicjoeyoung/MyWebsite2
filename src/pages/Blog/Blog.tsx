@@ -1,7 +1,14 @@
-//import BlogTest from './blogtest.mdx';
-import BlogTest from "../../assets/blogs/blogtest2.mdx";
+import BlogTest from '../../assets/blogs/blogtest.mdx';
+import BlogTest2 from "../../assets/blogs/blogtest2.mdx";
+import BlogTest3 from "../../assets/blogs/blogtest3.mdx";
 
-const Blog: React.FC = () => {
+const blogs: { [key: string]: React.ComponentType } = {
+    blogtest: BlogTest,
+    blogtest2: BlogTest2,
+    blogtest3: BlogTest3
+};
+
+const Blog = () => {
     return (
         <div >
             <header >
@@ -17,7 +24,11 @@ const Blog: React.FC = () => {
                         </div>
                     )
                 }} /> */}
-                <BlogTest />
+                {/* <BlogTest /> */}
+                {Object.keys(blogs).map((key: string, index: number) => {
+                    const BlogComponent: React.ComponentType = blogs[key];
+                    return <BlogComponent key={index} />;
+                })}
             </div>
         </div>
     );
