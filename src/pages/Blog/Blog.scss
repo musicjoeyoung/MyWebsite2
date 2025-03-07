@@ -1,1 +1,20 @@
 @use "../../styles/partials/index" as *;
+
+/* Blog.scss */
+.blog h1 {
+    font-size: 2rem;
+    color: #4a90e2;
+}
+
+.blog p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.blog ul {
+    list-style: square;
+}
+
+.blog ul li {
+    padding-left: 1rem;
+}
