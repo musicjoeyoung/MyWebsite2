@@ -1,6 +1,7 @@
 import BlogTest from '../../assets/blogs/blogtest.mdx';
 import BlogTest2 from "../../assets/blogs/blogtest2.mdx";
 import BlogTest3 from "../../assets/blogs/blogtest3.mdx";
+import { useState } from 'react';
 
 const blogs: { [key: string]: React.ComponentType } = {
     blogtest: BlogTest,
@@ -9,11 +10,22 @@ const blogs: { [key: string]: React.ComponentType } = {
 };
 
 const Blog = () => {
+    const [currentBlog, setCurrentBlog] = useState('blogtest');
+
+    const changeBlog = (blog: string) => {
+        setCurrentBlog(blog);
+    };
     return (
         <div >
             <header >
-                <h1 >test</h1>
+                <h1 >Blogs</h1>
             </header>
+
+            <button onClick={() => changeBlog('blogtest')}>Blog Test</button>
+            <button onClick={() => changeBlog('blogtest2')}>Blog Test 2</button>
+            <button onClick={() => changeBlog('blogtest3')}>Blog Test 3</button>
+
+
 
             <div >
                 {/*                 <BlogTest components={{
