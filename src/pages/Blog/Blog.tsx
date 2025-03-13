@@ -19,7 +19,7 @@ const Blog = () => {
         setCurrentBlog(<BlogComponent />);
     };
     return (
-        <div >
+        <div className="blog">
             <header >
                 <h1 >Blogs</h1>
                 <nav>
@@ -30,6 +30,16 @@ const Blog = () => {
                 </nav>
             </header>
 
+            <div className='blog'>
+                {currentBlog}
+            </div>
+        </div>
+    );
+};
+
+export default Blog;
+
+{/* 
             Outline/Ideas:
             - Blog page with a list of blogs; images with titles
             - Each blog is a markdown file
@@ -41,12 +51,4 @@ const Blog = () => {
             - Do I need a Blog component other than this?
 
 
-
-            <div className='blog'>
-                {currentBlog}
-            </div>
-        </div>
-    );
-};
-
-export default Blog;
+ */}

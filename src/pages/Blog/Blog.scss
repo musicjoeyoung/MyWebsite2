@@ -1,6 +1,11 @@
 @use "../../styles/partials/index" as *;
 
-/* Blog.scss */
+.blog {
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
 .blog h1 {
     font-size: 2rem;
     color: #4a90e2;
@@ -17,4 +22,12 @@
 
 .blog ul li {
     padding-left: 1rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+    margin: 0 auto;
 }

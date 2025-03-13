@@ -1,0 +1,250 @@
+.blogHeader {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 40px 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border-left: 5px solid #007bff;
+}
+
+.blogHeader h1 {
+  margin: 0 0 15px 0;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #343a40;
+  line-height: 1.2;
+}
+
+.blogHeader p {
+  margin: 5px 0;
+  color: #6c757d;
+  font-size: 1.1em;
+}
+
+/* Blog metadata */
+.blogMeta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.blogMeta span {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.blogMeta i {
+  margin-right: 5px;
+}
+
+/* Featured image */
+.featuredImage {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.featuredImage:hover {
+  transform: scale(1.02);
+}
+
+/* Blog content */
+.blogContent {
+  line-height: 1.8;
+  color: #343a40;
+  font-size: 1.1em;
+}
+
+.blogContent p {
+  margin-bottom: 20px;
+}
+
+.blogContent h2 {
+  font-size: 1.8em;
+  margin: 40px 0 20px;
+  color: #343a40;
+  border-bottom: 2px solid #f8f9fa;
+  padding-bottom: 10px;
+}
+
+.blogContent h3 {
+  font-size: 1.5em;
+  margin: 30px 0 15px;
+  color: #343a40;
+}
+
+/* Blog images */
+.blogImage {
+  width: 100%;
+  border-radius: 6px;
+  margin: 20px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.imageCaption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #6c757d;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Quote styling */
+.blogQuote {
+  background-color: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #495057;
+}
+
+.blogQuote cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  font-style: normal;
+  color: #6c757d;
+}
+
+/* Code blocks */
+.codeBlock {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 20px 0;
+  overflow-x: auto;
+  font-family: monospace;
+  border: 1px solid #e9ecef;
+}
+
+/* Tags */
+.blogTags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.tag {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 5px 10px;
+  border-radius: 20px;
+  margin: 0 8px 8px 0;
+  font-size: 0.85em;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Author section */
+.authorSection {
+  display: flex;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 40px 0;
+}
+
+.authorImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.authorInfo h4 {
+  margin: 0 0 5px 0;
+  color: #343a40;
+}
+
+.authorInfo p {
+  margin: 0;
+  color: #6c757d;
+}
+
+/* Related posts */
+.relatedPosts {
+  margin-top: 50px;
+}
+
+.relatedPosts h3 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #343a40;
+}
+
+.relatedPostsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.relatedPostCard {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.relatedPostCard:hover {
+  transform: translateY(-5px);
+}
+
+.relatedPostImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.relatedPostContent {
+  padding: 15px;
+}
+
+.relatedPostContent h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+  color: #343a40;
+}
+
+.relatedPostContent p {
+  color: #6c757d;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .blogHeader {
+    padding: 30px 15px;
+  }
+  
+  .blogHeader h1 {
+    font-size: 2em;
+  }
+  
+  .relatedPostsList {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .authorSection {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .authorImage {
+    margin: 0 0 15px 0;
+  }
+}
