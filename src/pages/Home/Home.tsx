@@ -36,8 +36,7 @@ const Home = () => {
         Data Science with Python from MIT via EdX.org.
         <br />
         <br />
-        Fun Fact: I am also in the Army Reserves where I am an Executive
-        Officer for a military band, and we play lots of wonderful music!
+        Fun Fact: I'm a 20-year Veteran of the US Army.
     </>
 
     return (
