@@ -36,7 +36,7 @@ const Home = () => {
         Data Science with Python from MIT via EdX.org.
         <br />
         <br />
-        Fun Fact: I'm a 20-year Veteran of the US Army.
+        Fun Fact: I'm a retired 20-year Veteran of the US Army.
     </>
 
     return (
