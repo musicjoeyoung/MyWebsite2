@@ -56,13 +56,6 @@
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/TS-Piano_qslant.png"
   },
   {
-    "title": "Pizza Redux",
-    "url": "https://github.com/musicjoeyoung/Pizza-Redux",
-    "repo_url": "https://github.com/musicjoeyoung/Pizza-Redux",
-    "description": "An exercise in buildling a site with Redux",
-    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1734470750/Screenshot_2024-12-17_at_4.24.54_PM_pc8gep.png"
-  },
-  {
     "title": "Weather",
     "url": "/weather",
     "repo_url": "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Weather/Weather.tsx",
