@@ -175,7 +175,7 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                         {/* Tools */}
                         <img
                             className="icon-container__icon"
-                            src="https://zod.dev/logo.svg"
+                            src="https://zod.dev/logo/logo-glow.png"
                             alt="Zod"
                             width={60}
                             height={60}
