@@ -7,6 +7,7 @@ import Error404 from './pages/Error404/Error404'
 import Home from "./pages/Home/Home"
 import Landing from "./pages/Landing/Landing"
 import Music from './pages/Music/Music'
+import ProgressBar from './components/ProgressBar/ProgressBar'
 import ScrollArrow from './components/ScrollArrow/ScrollArrow'
 import Timer from './components/Timer/Timer'
 import Timer2 from './components/Timer2/Timer2'
@@ -26,7 +27,7 @@ const App = () => {
 
   return (
     <>
-
+      {mainLayout && <ProgressBar />}
       <Routes>
         <Route path="/welcome" element={<Landing />} />
         <Route path="/" element={<Home />} />
