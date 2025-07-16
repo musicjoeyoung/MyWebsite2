@@ -7,7 +7,8 @@ import Hero from "../../components/Hero/Hero"
 import { Link } from "../../types/link"
 import Navbar from "../../components/Navbar/Navbar"
 import Parallax from "../../components/Parallax/Parallax"
-import Scores from "../../components/Scores/Scores"
+
+//import Scores from "../../components/Scores/Scores"
 
 const Music = () => {
     const musicLinks: Link[] = [
@@ -35,7 +36,7 @@ const Music = () => {
             <Parallax />
             <Bio bio={bio} backgroundColor="black" />
             <Parallax />
-            <Scores />
+            {/*  <Scores /> */}
             <Parallax />
             <Audio />
             <Footer backgroundColor="black" />

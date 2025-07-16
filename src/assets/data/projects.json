@@ -13,13 +13,13 @@
     "description": "**Winner in the AI category of the Honcathon!** This application was built for the HONCathon, using the HONC stack: Hono, Drizzle, Neon, Cloudflare, and Fiberplane, which makes use of Cloudflare's Workers and AI. The client-side repo is at: https://github.com/musicjoeyoung/HONC-client",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1734464996/Screenshot_2024-12-17_at_2.49.47_PM_erlnrz.png"
   },
-  {
+/*   {
     "title": "CodeCards",
     "url": "https://sensational-pegasus-16a760.netlify.app/",
     "repo_url": "https://github.com/musicjoeyoung/Flashcards",
     "description": "Welcome to CodeCards, the ultimate learning tool for mastering JavaScript! Whether you're a beginner just starting your coding journey or an experienced developer looking to deepen your understanding of JavaScript, our application is designed to help you learn and reinforce key concepts with ease. The server-side repo is at: https://github.com/musicjoeyoung/flash-cards-server",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/CodeCards_q1k9rm.png"
-  },
+  }, */
   {
     "title": "78th Army Band",
     "url": "https://www.78tharmyband.org/",
