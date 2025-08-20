@@ -19,7 +19,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         try {
             const stored = localStorage.getItem("site-theme");
             if (stored === "dev" || stored === "music") return stored;
-        } catch { }
+        } catch (error) {
+            console.error(error)
+        }
         if (typeof window !== "undefined") {
             return window.location.pathname.includes("/music") ? "music" : "dev";
         }
@@ -31,7 +33,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     useEffect(() => {
         try {
             localStorage.setItem("site-theme", theme);
-        } catch { }
+        } catch (error) {
+            console.error(error)
+        }
     }, [theme]);
 
     const setTheme = (next: SiteTheme) => {
