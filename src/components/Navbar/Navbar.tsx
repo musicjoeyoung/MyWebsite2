@@ -2,7 +2,9 @@ import "./Navbar.scss"
 
 import { Link } from "../../types/link"
 import jy from "../../assets/images/JY.png"
+import { useNavigate } from "react-router-dom"
 import { useState } from "react"
+import { useTheme } from "../../contexts/ThemeContext"
 
 interface NavbarProps {
     links: Link[],
@@ -10,6 +12,8 @@ interface NavbarProps {
 }
 const Navbar: React.FC<NavbarProps> = ({ links, backgroundColor }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const { theme, toggleTheme } = useTheme();
+    const navigate = useNavigate();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -43,6 +47,18 @@ const Navbar: React.FC<NavbarProps> = ({ links, backgroundColor }) => {
                         )}
                     </li>
                 ))}
+                <li className="navbar__li">
+                    <button
+                        onClick={() => {
+                            const next = theme === "dev" ? "/music" : "/";
+                            toggleTheme();
+                            navigate(next);
+                        }}
+                        aria-label="Toggle site theme"
+                    >
+                        {theme === "dev" ? "Developer" : "Musician"}
+                    </button>
+                </li>
             </ul>
         </nav>
     );

@@ -2,8 +2,10 @@ import "./Bio.scss"
 
 import { BioProps } from "../../types/bio"
 import profilePhoto from "../../assets/images/Joe.jpg"
+import { useTheme } from "../../contexts/ThemeContext"
 
 const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
+    const { theme } = useTheme();
     return (
         <div className="bio" id="about" style={{ backgroundColor: backgroundColor }}>
             <h2>About Me</h2>
@@ -20,7 +22,7 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                         {bio}
                     </p>
                 </div>
-                {!window.location.pathname.includes('/music') && (
+                {theme === 'dev' && (
                     <div className="icon-container">
                         {/* Frontend/UI Technologies */}
                         <img
