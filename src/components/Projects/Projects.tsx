@@ -5,10 +5,11 @@ import { useState } from "react"
 
 interface Project {
     title: string;
+    headline: string;
     description: string;
     img_url: string;
-    url: string;
-    repo_url: string;
+    urls: string[];
+    repo_urls: string[];
 }
 
 const Projects: React.FC = () => {
@@ -30,15 +31,36 @@ const Projects: React.FC = () => {
                 {projects.slice(0, showAll ? projects.length : 3).map((project: Project, index: number) => (
                     <div className="projects__project" key={index}>
                         <h3>{project.title}</h3>
+                        {project.headline && project.headline.trim() !== "" && (
+                            <div className="projects__headline">{project.headline}</div>
+                        )}
                         <div className="projects__img-desc-container">
-                            <a href={project.url} target="_blank" className="projects__img-a">
-                                <img className="projects__img" src={project.img_url} alt={project.title} />
-                            </a>
+                            {project.urls && project.urls.length > 0 && (
+                                <a href={project.urls[0]} target="_blank" className="projects__img-a">
+                                    <img className="projects__img" src={project.img_url} alt={project.title} />
+                                </a>
+                            )}
                             <p className="projects__desc">{project.description}</p>
                         </div>
                         <div className="projects__links">
-                            <a className="projects__link" href={project.url}>Link</a>
-                            <a className="projects__link" href={project.repo_url}>GitHub</a>
+                            {project.urls && project.urls.map((url, i) => (
+                                <a
+                                    key={url + i}
+                                    className="projects__link"
+                                    href={url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >Link{project.urls.length > 1 ? ` #${i + 1}` : ''}</a>
+                            ))}
+                            {project.repo_urls && project.repo_urls.map((repoUrl, i) => (
+                                <a
+                                    key={repoUrl + i}
+                                    className="projects__link"
+                                    href={repoUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >GitHub{project.repo_urls.length > 1 ? ` #${i + 1}` : ''}</a>
+                            ))}
                         </div>
                     </div>
                 ))}
