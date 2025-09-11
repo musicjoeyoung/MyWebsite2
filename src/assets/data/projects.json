@@ -3,10 +3,22 @@
     "title": "Code Explainer Tutor",
     "headline": "Winner of Vibe Summer Hackathon - Week 4",
     "urls": [
-      "https://code-explainer-tutor.musicjoeyoung.workers.dev/",
-      "https://code-explainer-tutor.musicjoeyoung.workers.dev/viewer",
-      "https://code-explainer-tutor.musicjoeyoung.workers.dev/mcp",
-      "https://www.youtube.com/live/Y-e33aYKZK0?feature=shared&t=676"
+      {
+        "name": "Main App",
+        "url": "https://code-explainer-tutor.musicjoeyoung.workers.dev/"
+      },
+      {
+        "name": "Viewer",
+        "url": "https://code-explainer-tutor.musicjoeyoung.workers.dev/viewer"
+      },
+      {
+        "name": "MCP",
+        "url": "https://code-explainer-tutor.musicjoeyoung.workers.dev/mcp"
+      },
+      {
+        "name": "Demo Video",
+        "url": "https://www.youtube.com/live/Y-e33aYKZK0?feature=shared&t=676"
+      }
     ],
     "repo_urls": [
       "https://github.com/musicjoeyoung/valentines-day-cards"
