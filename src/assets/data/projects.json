@@ -182,17 +182,5 @@
     ],
     "description": "Built during a 24-hour hackathon through Mintbean.io early in my coding career, this is a game that tests the user's ability to strengthen their tonal and visual memory.",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/Music-Memory_fnvzuy.png"
-  },
-  {
-    "title": "Joseph M Young - NextJS portfolio",
-    "headline": "",
-    "urls": [
-      "https://fa0ae40a-627f-4bbf-ad1e-abe81219724d.netlify.app/"
-    ],
-    "repo_urls": [
-      "https://github.com/musicjoeyoung/MyWebsite"
-    ],
-    "description": "This is my previous portfolio website built with NextJS",
-    "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/JosephMYoung-NextJS_gwmdrk.png"
   }
 ]
