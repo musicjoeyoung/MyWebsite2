@@ -21,7 +21,10 @@
       }
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/valentines-day-cards"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/Code-Explainer-Tutor"
+      }
     ],
     "description": "Thrilled and grateful to share that I won Week 4 of Fiberplane & Cloudflare's Vibe Summer Hackathon! For my project, I built an MCP server that acts as a Code Explainer + Tutor, helping break down complex code into understandable explanations. Working in the HONC stack and with Fiberplane has been both exciting and inspiring. These tools make building solutions a real joy--it's just really fun.",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1757349518/Screenshot_2025-09-08_at_12.38.25_PM_q0iulm.png"
@@ -33,7 +36,14 @@
       "https://valentinesdaycards.netlify.app/"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/valentines-day-cards"
+      {
+        "name": "GitHub - Client",
+        "url": "https://github.com/musicjoeyoung/valentines-day-cards-client"
+      },
+      {
+        "name": "GitHub - Server",
+        "url": "https://github.com/musicjoeyoung/valentines-day-cards"
+      }
     ],
     "description": "A Valentine's Day card generator where anyone can contribute to a public gallery. Made with Fiberplane's HONC stack and React for the client-side.",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1738864745/Screenshot_2025-02-06_at_12.58.24_PM_wmtg70.png"
@@ -45,8 +55,14 @@
       "https://honcathon.netlify.app/"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/HONC",
-      "https://github.com/musicjoeyoung/HONC-client"
+      {
+        "name": "GitHub - Client",
+        "url": "https://github.com/musicjoeyoung/HONC-client"
+      },
+      {
+        "name": "GitHub - Server",
+        "url": "https://github.com/musicjoeyoung/HONC"
+      }
     ],
     "description": "This application was built for the HONCathon, using the HONC stack: Hono, Drizzle, Neon, Cloudflare, and Fiberplane, which makes use of Cloudflare's Workers and AI.",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1734464996/Screenshot_2024-12-17_at_2.49.47_PM_erlnrz.png"
@@ -58,7 +74,10 @@
       "https://www.78tharmyband.org/"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/78ArmyBand"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/78ArmyBand"
+      }
     ],
     "description": "Website for the US Army 78th Army Band",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572917/78th-Army-Band_sfihan.png"
@@ -70,7 +89,10 @@
       "https://jaycowit.com/"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/jaycowit"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/jaycowit"
+      }
     ],
     "description": "Portfolio website for Jay Cowit",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/Jay-Cowit_atvhyw.png"
@@ -82,7 +104,10 @@
       "https://audiojacke.com/"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/jackie-martin"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/jackie-martin"
+      }
     ],
     "description": "Portfolio website for Jackie Martin",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572915/Jackie-Martin_xrqtvq.png"
@@ -94,7 +119,10 @@
       "https://carlyandersonwrites.com/"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/Carly-Website"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/Carly-Website"
+      }
     ],
     "description": "Website for writer, Carly Anderson",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/Carly-Anderson_swmo3m.png"
@@ -106,7 +134,10 @@
       "https://tourmaline-youtiao-7ca8b6.netlify.app/"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/piano-ts"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/piano-ts"
+      }
     ],
     "description": "A piano app built with TypeScript & Tone.js",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/TS-Piano_qslant.png"
@@ -118,7 +149,10 @@
       "/weather"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Weather/Weather.tsx"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Weather/Weather.tsx"
+      }
     ],
     "description": "A weather app built using the OpenWeather API",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723735607/Weather_fgld0s.png"
@@ -130,7 +164,10 @@
       "/timer"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Timer/Timer.tsx"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Timer/Timer.tsx"
+      }
     ],
     "description": "A countdown timer I use when teaching",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723738152/Screenshot_2024-08-15_at_12.09.03_PM_qmisf1.png"
@@ -142,7 +179,10 @@
       "/timer2"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Timer2/Timer2.tsx"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/MyWebsite2/blob/main/src/components/Timer2/Timer2.tsx"
+      }
     ],
     "description": "Another countdown timer I've used when teaching",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1734464567/Screenshot_2024-12-17_at_2.42.15_PM_wod9zq.png"
@@ -154,7 +194,10 @@
       "https://github.com/musicjoeyoung/Team-Generator"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/Team-Generator"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/Team-Generator"
+      }
     ],
     "description": "A Node.js tool I use for teaching that randomly generates teams as well as student folders",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723738575/Screenshot_2024-08-15_at_12.15.52_PM_u1ljyr.png"
@@ -166,7 +209,10 @@
       "https://wonderful-ganache-6ce0a6.netlify.app/"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/Seasonle-Game"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/Seasonle-Game"
+      }
     ],
     "description": "A Worldle clone about seasons",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572915/Seasonle_lokh3m.png"
@@ -178,7 +224,10 @@
       "https://us-bey.netlify.app/"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/us-bey"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/us-bey"
+      }
     ],
     "description": "Just the silliest app you'll ever find on the internet",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572915/USA-Beyonce%CC%81_rpfwln.png"
@@ -190,7 +239,10 @@
       "https://taupe-starship-4cf747.netlify.app/"
     ],
     "repo_urls": [
-      "https://github.com/musicjoeyoung/MusicMemoryGame"
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/MusicMemoryGame"
+      }
     ],
     "description": "Built during a 24-hour hackathon through Mintbean.io early in my coding career, this is a game that tests the user's ability to strengthen their tonal and visual memory.",
     "img_url": "https://res.cloudinary.com/dfbuwtl5q/image/upload/v1723572916/Music-Memory_fnvzuy.png"

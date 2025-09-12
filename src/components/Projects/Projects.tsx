@@ -9,7 +9,7 @@ interface Project {
     description: string;
     img_url: string;
     urls: (string | { name: string; url: string })[];
-    repo_urls: string[];
+    repo_urls: ({ name: string; url: string } | string)[];
 }
 
 const Projects: React.FC = () => {
@@ -79,15 +79,29 @@ const Projects: React.FC = () => {
                                     );
                                 }
                             })}
-                            {project.repo_urls && project.repo_urls.map((repoUrl, i) => (
-                                <a
-                                    key={repoUrl + i}
-                                    className="projects__link"
-                                    href={repoUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >GitHub{project.repo_urls.length > 1 ? ` #${i + 1}` : ''}</a>
-                            ))}
+                            {project.repo_urls && project.repo_urls.map((repoObj, i) => {
+                                if (typeof repoObj === "string") {
+                                    return (
+                                        <a
+                                            key={repoObj + i}
+                                            className="projects__link"
+                                            href={repoObj}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >GitHub</a>
+                                    );
+                                } else {
+                                    return (
+                                        <a
+                                            key={repoObj.url + i}
+                                            className="projects__link"
+                                            href={repoObj.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >{repoObj.name || "GitHub"}</a>
+                                    );
+                                }
+                            })}
                         </div>
                     </div>
                 ))}
