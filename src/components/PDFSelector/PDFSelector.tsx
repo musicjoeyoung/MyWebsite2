@@ -13,8 +13,9 @@ interface PDFSelectorProps {
     onSelectPDF: (pdf: PDFDocument) => void;
 }
 
+
 export const PDFSelector: React.FC<PDFSelectorProps> = ({
-    pdfs,
+
     selectedPDF,
     onSelectPDF,
 }) => {
@@ -45,30 +46,15 @@ export const PDFSelector: React.FC<PDFSelectorProps> = ({
                 <p className="pdf-subtitle">Select a document to view</p>
             </div>
 
-            <ul className="pdf-list">
-                {scores.length === 0 ? (
-                    <li className="pdf-empty">No PDFs available.</li>
-                ) : (
-                    scores.map((score) => (
-                        <li key={score.id} className="pdf-list-item">
-                            <button
-                                onClick={() => onSelectPDF(score)}
-                                className={`pdf-button ${selectedPDF?.id === score.id ? 'selected' : ''}`}
-                            >
-                                {score.name}
-                            </button>
-                        </li>
-                    ))
-                )}
-            </ul>
+
 
             <div className="pdf-grid">
                 {scores.map((score) => {
                     const doc = {
                         id: score.id,
-                        name: (score as any).filename ?? (score as any).name ?? 'Untitled',
+                        name: (score as PDFDocument).filename ?? (score as PDFDocument).filename ?? 'Untitled',
                         url: `https://josephmyoung-back.musicjoeyoung.workers.dev/api/pdfs/${score.id}/file`,
-                        description: (score as any).description,
+
                     };
 
                     return (
@@ -80,11 +66,7 @@ export const PDFSelector: React.FC<PDFSelectorProps> = ({
                             <div className="pdf-card-inner">
                                 <div className="pdf-meta">
                                     <h3 className="pdf-card-title">{doc.name}</h3>
-                                    {doc.description && (
-                                        <p className="pdf-card-desc">
-                                            {doc.description}
-                                        </p>
-                                    )}
+
                                 </div>
                                 <ChevronRight className={`chevron ${selectedPDF?.id === score.id ? 'chev-selected' : ''}`} />
                             </div>

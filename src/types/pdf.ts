@@ -1,6 +1,5 @@
 export interface PDFDocument {
     id: string;
-    name: string;
-    url: string;
-    description?: string;
+    filename: string;
+    storageKey: string;
 }
