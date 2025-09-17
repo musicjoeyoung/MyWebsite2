@@ -63,25 +63,34 @@ export const PDFSelector: React.FC<PDFSelectorProps> = ({
             </ul>
 
             <div className="pdf-grid">
-                {pdfs.map((pdf) => (
-                    <button
-                        key={pdf.id}
-                        onClick={() => onSelectPDF(pdf)}
-                        className={`pdf-card ${selectedPDF?.id === pdf.id ? 'selected' : ''}`}
-                    >
-                        <div className="pdf-card-inner">
-                            <div className="pdf-meta">
-                                <h3 className="pdf-card-title">{pdf.name}</h3>
-                                {pdf.description && (
-                                    <p className="pdf-card-desc">
-                                        {pdf.description}
-                                    </p>
-                                )}
+                {scores.map((score) => {
+                    const doc = {
+                        id: score.id,
+                        name: (score as any).filename ?? (score as any).name ?? 'Untitled',
+                        url: `https://josephmyoung-back.musicjoeyoung.workers.dev/api/pdfs/${score.id}/file`,
+                        description: (score as any).description,
+                    };
+
+                    return (
+                        <button
+                            key={score.id}
+                            onClick={() => onSelectPDF(doc)}
+                            className={`pdf-card ${selectedPDF?.id === score.id ? 'selected' : ''}`}
+                        >
+                            <div className="pdf-card-inner">
+                                <div className="pdf-meta">
+                                    <h3 className="pdf-card-title">{doc.name}</h3>
+                                    {doc.description && (
+                                        <p className="pdf-card-desc">
+                                            {doc.description}
+                                        </p>
+                                    )}
+                                </div>
+                                <ChevronRight className={`chevron ${selectedPDF?.id === score.id ? 'chev-selected' : ''}`} />
                             </div>
-                            <ChevronRight className={`chevron ${selectedPDF?.id === pdf.id ? 'chev-selected' : ''}`} />
-                        </div>
-                    </button>
-                ))}
+                        </button>
+                    );
+                })}
             </div>
         </div>
     );
