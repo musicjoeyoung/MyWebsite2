@@ -1,0 +1,147 @@
+.pdf-selector {
+    width: 20rem; /* w-80 */
+    background: #ffffff; /* bg-white */
+    border-right: 1px solid #e5e7eb; /* border-gray-200 */
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-header {
+    padding: 1.5rem; /* p-6 */
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.pdf-title {
+    font-size: 1.125rem; /* text-xl */
+    font-weight: 600;
+    color: #1f2937; /* gray-800 */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.pdf-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.pdf-subtitle {
+    font-size: 0.875rem;
+    color: #4b5563; /* gray-600 */
+    margin-top: 0.25rem;
+}
+
+.pdf-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pdf-list-item {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.pdf-button {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1rem;
+    color: #374151; /* gray-800-ish */
+    cursor: pointer;
+}
+
+.pdf-button.selected {
+    font-weight: 600;
+    color: #2563eb; /* blue-600 */
+}
+
+.pdf-empty {
+    padding: 1rem;
+    color: #6b7280; /* gray-500 */
+}
+
+.pdf-grid {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* card that looked like the bottom button group */
+.pdf-card {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    transition: all 0.2s ease;
+    display: block;
+    cursor: pointer;
+}
+
+.pdf-card:hover {
+    border-color: #d1d5db; /* hover border */
+    background: #f9fafb;
+    transform: none;
+}
+
+.pdf-card.selected {
+    border-color: #3b82f6; /* blue-500 */
+    background: #eff6ff; /* blue-50 */
+    box-shadow: 0 6px 10px rgba(2, 6, 23, 0.06);
+}
+
+.pdf-card-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pdf-meta {
+    flex: 1;
+    min-width: 0;
+    margin-right: 0.5rem;
+}
+
+.pdf-card-title {
+    font-weight: 500;
+    color: #1f2937;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pdf-card-desc {
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin-top: 0.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.chevron {
+    width: 1rem;
+    height: 1rem;
+    color: #9ca3af; /* gray-400 */
+    transition: transform 0.2s ease;
+}
+
+.pdf-card.selected .chevron,
+.chev-selected {
+    color: #3b82f6;
+    transform: translateX(4px);
+}
+
+.pdf-card:hover .chevron {
+    transform: translateX(4px);
+}
