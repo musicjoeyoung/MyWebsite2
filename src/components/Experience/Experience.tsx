@@ -8,8 +8,23 @@ const Experience = () => {
       <ul className="experience__ul">
         <details>
           <summary>
+            <span>Full Stack Engineer - Becoming You Labs</span> - New
+            York, NY - September 2025 - current
+          </summary>
+          <ul>
+            <li>Builds and maintains responsive web applications using React and Next.js, translating designs into pixel-perfect, accessible, and performant interfaces.</li>
+            <li>Designs and implements APIs, services, and data pipelines, while integrating third-party systems such as payments, analytics, LMS, and HRIS platforms.</li>
+            <li>Optimizes user interfaces for speed, accessibility, and experience, ensuring that frontend and backend systems are reliable, secure, and scalable.</li>
+            <li>Works across relational and non-relational databases—including PostgreSQL and MySQL—writing clean, performant queries and designing efficient data models.</li>
+            <li>Collaborates with the data team to support analytics, reporting, and research, and with product and design to bring features from concept to launch.</li>
+            <li>Supports CI/CD pipelines, automated testing, and cloud deployments, while monitoring system health, uptime, and observability.</li>
+            <li>Contributes to ongoing infrastructure improvements and participates in code reviews, pair programming, and engineering discussions.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>
             <span>Educator, Software Engineering - BrainStation</span> - New
-            York, NY - March 2023 - current
+            York, NY - January 2024 - September 2025
           </summary>
           <ul>
             <li>
