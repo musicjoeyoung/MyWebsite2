@@ -28,25 +28,25 @@ const Experience = () => {
           </summary>
           <ul>
             <li>
-              Leads 12-week intensive engineering cohorts, mentoring 10–50+
+              Lead 12-week intensive engineering cohorts, mentoring 10–50+
               students per session through full-stack development projects using
               modern web technologies.
             </li>
 
             <li>
-              Iteratively ships improvements to curriculum content, coding
+              Iteratively shipped improvements to curriculum content, coding
               examples, and internal documentation to ensure technical accuracy,
               clarity, and real-world relevance.
             </li>
 
             <li>
-              Collaborates cross-functionally to design, test, and roll out
+              Collaborated cross-functionally to design, test, and roll out
               internal tools that streamline team workflows and enhance the
               student learning experience.
             </li>
 
             <li>
-              Researches and integrates new technologies into the curriculum to
+              Researched and integrated new technologies into the curriculum to
               keep pace with evolving industry standards, including Next.js,
               REST APIs, CI/CD pipelines, and database best practices.
             </li>
@@ -58,7 +58,7 @@ const Experience = () => {
             </li>
 
             <li>
-              Applies a product-driven mindset to education—constantly shipping,
+              Applied a product-driven mindset to education: constantly shipping,
               refining, and iterating on curriculum and tools in response to
               user (student + instructor) feedback.
             </li>
