@@ -1,7 +1,7 @@
 import "./Bio.scss"
 
 import { BioProps } from "../../types/bio"
-import profilePhoto from "../../assets/images/Joe.jpg"
+import profilePhoto from "../../assets/images/Joe.png"
 
 const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
     return (
