@@ -119,6 +119,15 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                             height={60}
                         />
 
+                        <img
+                            className="icon-container__icon"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
+                            alt="Java"
+                            width={60}
+                            height={60}
+                        />
+
+
                         {/* Databases */}
                         <img
                             className="icon-container__icon"
