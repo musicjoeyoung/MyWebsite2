@@ -1,8 +1,12 @@
 import "./Bio.scss"
 
 import { BioProps } from "../../types/bio"
+<<<<<<< HEAD
 import profilePhoto from "../../assets/images/Joe.jpg"
 import { useTheme } from "../../contexts/ThemeContext"
+=======
+import profilePhoto from "../../assets/images/Joe.png"
+>>>>>>> main
 
 const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
     const { theme } = useTheme();
@@ -120,6 +124,15 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                             width={60}
                             height={60}
                         />
+
+                        <img
+                            className="icon-container__icon"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
+                            alt="Java"
+                            width={60}
+                            height={60}
+                        />
+
 
                         {/* Databases */}
                         <img
