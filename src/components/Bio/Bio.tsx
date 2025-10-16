@@ -1,12 +1,8 @@
 import "./Bio.scss"
 
 import { BioProps } from "../../types/bio"
-<<<<<<< HEAD
-import profilePhoto from "../../assets/images/Joe.jpg"
-import { useTheme } from "../../contexts/ThemeContext"
-=======
 import profilePhoto from "../../assets/images/Joe.png"
->>>>>>> main
+import { useTheme } from "../../contexts/ThemeContext"
 
 const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
     const { theme } = useTheme();

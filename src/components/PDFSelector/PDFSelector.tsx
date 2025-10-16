@@ -8,22 +8,38 @@ import React from 'react';
 import axios from 'axios';
 
 interface PDFSelectorProps {
-    pdfs: PDFDocument[];
     selectedPDF: PDFDocument | null;
     onSelectPDF: (pdf: PDFDocument) => void;
 }
 
-
 export const PDFSelector: React.FC<PDFSelectorProps> = ({
-
     selectedPDF,
     onSelectPDF,
 }) => {
 
     const [scores, setScores] = useState<PDFDocument[]>([]);
+    const [scoresInViewport, setScoresInViewport] = useState(false);
 
     useEffect(() => {
         fetchPDFs();
+    }, []);
+
+    useEffect(() => {
+        const scoresElement = document.getElementById('scores');
+        if (!scoresElement) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setScoresInViewport(entry.isIntersecting);
+            },
+            { threshold: 0.1 } // Trigger when 10% of the element is visible
+        );
+
+        observer.observe(scoresElement);
+
+        return () => {
+            observer.disconnect();
+        };
     }, []);
 
     const fetchPDFs = async () => {
@@ -37,7 +53,7 @@ export const PDFSelector: React.FC<PDFSelectorProps> = ({
     };
 
     return (
-        <div className="pdf-selector">
+        <div className={`pdf-selector ${scoresInViewport ? 'scores-visible' : ''}`}>
             <div className="pdf-header">
                 <h2 className="pdf-title">
                     <FileText className="pdf-icon" />
@@ -48,7 +64,7 @@ export const PDFSelector: React.FC<PDFSelectorProps> = ({
 
 
 
-            <div className="pdf-grid">
+            <div className="pdf-grid" id="scores">
                 {scores.map((score) => {
                     const doc = {
                         id: score.id,
