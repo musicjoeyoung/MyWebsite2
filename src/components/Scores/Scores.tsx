@@ -4,7 +4,7 @@ import { PDFDocument } from '../../types/pdf';
 //import music from "../../assets/documents/MarShawn.pdf"
 import { PDFSelector } from '../PDFSelector/PDFSelector';
 import { PDFViewer } from '../PDFViewer/PDFViewer';
-import { samplePDFs } from '../../assets/documents/samplePDFs';
+//import { samplePDFs } from '../../assets/documents/samplePDFs';
 import { useState } from 'react';
 
 const Scores = () => {
@@ -14,7 +14,7 @@ const Scores = () => {
             <h2>Scores</h2>
             <div className="h-screen bg-gray-100 flex">
                 <PDFSelector
-                    pdfs={samplePDFs}
+                    //pdfs={samplePDFs}
                     selectedPDF={selectedPDF}
                     onSelectPDF={setSelectedPDF}
                 />
