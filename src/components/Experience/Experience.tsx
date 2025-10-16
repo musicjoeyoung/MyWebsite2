@@ -9,7 +9,7 @@ const Experience = () => {
         <details>
           <summary>
             <span>Full Stack Engineer - Becoming You Labs</span> - New
-            York, NY - September 2025 - current
+            York, NY - September 2025 - September 2025
           </summary>
           <ul>
             <li>Builds and maintains responsive web applications using React and Next.js, translating designs into pixel-perfect, accessible, and performant interfaces.</li>
