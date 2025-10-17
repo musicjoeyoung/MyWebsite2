@@ -1,6 +1,5 @@
 import "./Music.scss"
 
-import Audio from "../../components/Audio/Audio"
 import Bio from "../../components/Bio/Bio"
 import Footer from "../../components/Footer/Footer"
 import Hero from "../../components/Hero/Hero"
@@ -8,13 +7,14 @@ import { Link } from "../../types/link"
 import Navbar from "../../components/Navbar/Navbar"
 import Parallax from "../../components/Parallax/Parallax"
 import Scores from "../../components/Scores/Scores"
+import Works from "../../components/Works/Works"
 
 const Music = () => {
     const musicLinks: Link[] = [
         { label: "Home", url: "/music" },
         { label: "About", url: "#about" },
         { label: "Scores", url: "#scores" },
-        { label: "Audio", url: "#audio" },
+        { label: "Works", url: "#works" },
         { label: "Videos", url: "#video" },
         { label: "Contact", url: "#contact" },
     ]
@@ -28,7 +28,7 @@ const Music = () => {
             <Navbar links={musicLinks} backgroundColor="black" />
             <Hero
                 name="Joseph Young"
-                title="Musician"
+                title="Musician | "
                 description="Composer, Guitarist, Trumpeter."
                 backgroundColor="black"
             />
@@ -37,7 +37,7 @@ const Music = () => {
             <Parallax />
             <Scores />
             <Parallax />
-            <Audio />
+            <Works />
             <Footer backgroundColor="black" />
 
         </>

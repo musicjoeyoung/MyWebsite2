@@ -1,10 +1,10 @@
-import "./Audio.scss"
+import "./Works.scss"
 
-const Audio = () => {
+const Works = () => {
     return (
-        <div className="audio" id="audio">
-            <h2>Audio</h2>
-            <section className="works">
+        <div className="works" id="works">
+            <h2>Works</h2>
+            <section className="works__list">
                 <h3>Works</h3>
                 <h4>Large ensemble</h4>
                 <ul>
@@ -62,4 +62,4 @@ const Audio = () => {
         </div >
     )
 }
-export default Audio
+export default Works
