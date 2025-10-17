@@ -1,7 +1,9 @@
 import "./Navbar.scss"
 
 import { Link } from "../../types/link"
+import code from "../../assets/images/code.svg"
 import jy from "../../assets/images/JY.png"
+import music from "../../assets/images/music.svg"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { useTheme } from "../../contexts/ThemeContext"
@@ -48,16 +50,25 @@ const Navbar: React.FC<NavbarProps> = ({ links, backgroundColor }) => {
                     </li>
                 ))}
                 <li className="navbar__li">
-                    <button
-                        onClick={() => {
+                    <div className="theme-toggle">
+                        <div className="theme-toggle__track" onClick={() => {
                             const next = theme === "dev" ? "/music" : "/";
                             toggleTheme();
                             navigate(next);
-                        }}
-                        aria-label="Toggle site theme"
-                    >
-                        {theme === "dev" ? "Developer" : "Musician"}
-                    </button>
+                        }}>
+                            <div className={`theme-toggle__slider ${theme === "dev" ? "theme-toggle__slider--dev" : "theme-toggle__slider--music"}`}>
+                                <img
+                                    src={theme === "dev" ? code : music}
+                                    alt={theme === "dev" ? "Developer" : "Musician"}
+                                    className="theme-toggle__icon"
+                                />
+                            </div>
+                            <div className="theme-toggle__labels">
+                                <img src={music} alt="Musician" className="theme-toggle__label theme-toggle__label--music" />
+                                <img src={code} alt="Developer" className="theme-toggle__label theme-toggle__label--dev" />
+                            </div>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </nav>
