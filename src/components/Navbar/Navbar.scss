@@ -1,5 +1,9 @@
 @use "../../styles/partials/index" as *;
 
+/* .navbar-container {
+    display: flex;
+    background-color: $background;
+} */
 .navbar {
     position: relative;
     top: 0;
@@ -47,6 +51,10 @@
     }
 
     &__ul {
+        display: grid;
+        grid-template-columns: auto 1fr auto; /* logo | links | theme-toggle */
+        align-items: center;
+        width: 100%;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
@@ -103,6 +111,8 @@
     &__logo-a {
         width: 14%;
         text-align: left;
+        grid-column: 1;
+        justify-self: start;
 
         @include tablet {
             width: 7%;
@@ -112,6 +122,21 @@
 
     &__logo {
         width: 50%;
+    }
+
+    &__links {
+        grid-column: 2;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__theme-toggle {
+        grid-column: 3;
+        justify-self: end;
     }
 }
 
@@ -182,4 +207,28 @@
 
 .theme-toggle__label--music {
     opacity: var(--music-opacity, 0.6);
+}
+
+// For mobile, stack vertically but keep logo at top and theme toggle at bottom
+@media (max-width: 768px) {
+    .navbar__ul--open {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .navbar__logo-a {
+        grid-row: 1;
+        justify-self: center;
+    }
+
+    .navbar__links {
+        grid-row: 2;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar__theme-toggle {
+        grid-row: 3;
+        justify-self: center;
+    }
 }

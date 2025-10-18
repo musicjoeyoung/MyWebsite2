@@ -54,7 +54,9 @@ const Navbar: React.FC<NavbarProps> = ({ links, backgroundColor }) => {
                         <div className="theme-toggle__track" onClick={() => {
                             const next = theme === "dev" ? "/music" : "/";
                             toggleTheme();
-                            navigate(next);
+                            setTimeout(() => {
+                                navigate(next);
+                            }, 150);
                         }}>
                             <div className={`theme-toggle__slider ${theme === "dev" ? "theme-toggle__slider--dev" : "theme-toggle__slider--music"}`}>
                                 <img

@@ -245,6 +245,88 @@
             }
         }
     }
+
+    &__audio-section {
+        background-color: white;
+        border-top: 2px solid #e5e7eb;
+        padding: 2rem;
+        margin-top: 2rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &__audio-header {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #6b7280;
+            font-style: italic;
+        }
+    }
+
+    &__audio-embeds {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+
+        @media (min-width: 768px) {
+            gap: 2.5rem;
+        }
+    }
+
+    &__audio-embed {
+        h4 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 1rem;
+            text-align: center;
+
+            @media (min-width: 768px) {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    &__embed-container {
+        width: 100%;
+
+        iframe {
+            width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+            // Ensure proper aspect ratio for different embed types
+            &[src*="soundcloud"] {
+                min-height: 166px;
+            }
+
+            &[src*="youtube"] {
+                min-height: 200px;
+
+                @media (min-width: 768px) {
+                    height: 315px;
+                }
+            }
+
+            &[src*="bandcamp"] {
+                min-height: 120px;
+            }
+        }
+    }
 }
 
 @keyframes spin {

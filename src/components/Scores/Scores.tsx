@@ -1,14 +1,22 @@
 import "./Scores.scss"
 
+import { useEffect, useState } from 'react';
+
 import { PDFDocument } from '../../types/pdf';
 //import music from "../../assets/documents/MarShawn.pdf"
 import { PDFSelector } from '../PDFSelector/PDFSelector';
 import { PDFViewer } from '../PDFViewer/PDFViewer';
-//import { samplePDFs } from '../../assets/documents/samplePDFs';
-import { useState } from 'react';
+import { Work } from '../../types/works';
+import worksData from '../../assets/data/works.json';
 
 const Scores = () => {
     const [selectedPDF, setSelectedPDF] = useState<PDFDocument | null>(null);
+    const [works, setWorks] = useState<Work[]>([]);
+
+    useEffect(() => {
+        setWorks(worksData as Work[]);
+    }, []);
+
     return (
         <div className="scores" id="scores">
             <h2>Scores</h2>
@@ -18,7 +26,7 @@ const Scores = () => {
                     selectedPDF={selectedPDF}
                     onSelectPDF={setSelectedPDF}
                 />
-                <PDFViewer selectedPDF={selectedPDF} />
+                <PDFViewer selectedPDF={selectedPDF} works={works} />
             </div>
         </div>
     )

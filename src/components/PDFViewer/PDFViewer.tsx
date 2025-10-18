@@ -7,14 +7,16 @@ import { Document, Page, pdfjs } from 'react-pdf';
 import React, { useCallback, useState } from 'react';
 
 import { PDFDocument } from '../../types/pdf';
+import { Work } from '../../types/works';
 
 pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
 
 interface PDFViewerProps {
     selectedPDF: PDFDocument | null;
+    works?: Work[];
 }
 
-export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF }) => {
+export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] }) => {
     const [numPages, setNumPages] = useState<number>(0);
     const [currentPagePair, setCurrentPagePair] = useState<number>(1);
     const [scale, setScale] = useState<number>(0.8);
@@ -50,6 +52,42 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF }) => {
         setScale(0.8);
     }, []);
 
+    const matchingWork = React.useMemo(() => {
+        if (!selectedPDF || !selectedPDF.name || !works.length) return null;
+
+        // Clean PDF name by removing file extension and common variations
+        const cleanPDFName = selectedPDF.name
+            .replace(/\.(pdf|PDF)$/, '')
+            .replace(/[-_]/g, ' ')  // Replace hyphens and underscores with spaces
+            .replace(/\s+/g, ' ')   // Replace multiple spaces with single space
+            .trim();
+
+        const matchedWork = works.find(work => {
+            const cleanWorkTitle = work.title
+                .replace(/[-_]/g, ' ')
+                .replace(/\s+/g, ' ')
+                .trim();
+
+            // Try exact match first
+            if (cleanWorkTitle.toLowerCase() === cleanPDFName.toLowerCase()) {
+                return true;
+            }
+
+            // Try partial match if one contains the other
+            const titleLower = cleanWorkTitle.toLowerCase();
+            const pdfLower = cleanPDFName.toLowerCase();
+
+            return titleLower.includes(pdfLower) || pdfLower.includes(titleLower);
+        });
+
+        // Debug logging
+        if (matchedWork) {
+            console.log(`Found matching work for PDF "${cleanPDFName}": "${matchedWork.title}"`);
+        }
+
+        return matchedWork;
+    }, [selectedPDF, works]);
+
     if (!selectedPDF) {
         return (
             <div className="pdf-viewer__no-pdf">
@@ -76,7 +114,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF }) => {
             <div className="pdf-viewer__header">
                 <div className="pdf-viewer__header-content">
                     <div className="pdf-viewer__header-info">
-                        <h1>{selectedPDF.name}</h1>
+                        <h1>{selectedPDF.name || selectedPDF.filename || 'Unknown PDF'}</h1>
                         <p>
                             Pages {leftPage}{rightPage <= numPages ? `-${rightPage}` : ''} of {numPages}
                         </p>
@@ -142,7 +180,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF }) => {
 
                 <div className="pdf-viewer__document-container">
                     <Document
-                        file={selectedPDF.url}
+                        file={selectedPDF.url || ''}
                         onLoadSuccess={onDocumentLoadSuccess}
                         onLoadStart={onDocumentLoadStart}
                         loading={
@@ -158,7 +196,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF }) => {
                                     This PDF cannot be loaded due to CORS restrictions or the file may be unavailable.
                                 </p>
                                 <div className="pdf-viewer__error-details">
-                                    <p>URL: {selectedPDF.url}</p>
+                                    <p>URL: {selectedPDF.url || 'No URL available'}</p>
                                     <p>Try using a PDF hosted on the same domain or with proper CORS headers.</p>
                                 </div>
                             </div>
@@ -195,6 +233,47 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF }) => {
                         </div>
                     </Document>
                 </div>
+
+                {matchingWork && (matchingWork.soundcloud_embed || matchingWork.youtube_embed || matchingWork.bandcamp_embed) && (
+                    <div className="pdf-viewer__audio-section">
+                        <div className="pdf-viewer__audio-header">
+                            <h3>Listen Along</h3>
+                            <p>Audio recording of "{matchingWork.title}"</p>
+                        </div>
+
+                        <div className="pdf-viewer__audio-embeds">
+                            {matchingWork.soundcloud_embed && (
+                                <div className="pdf-viewer__audio-embed">
+                                    <h4>SoundCloud</h4>
+                                    <div
+                                        className="pdf-viewer__embed-container"
+                                        dangerouslySetInnerHTML={{ __html: matchingWork.soundcloud_embed }}
+                                    />
+                                </div>
+                            )}
+
+                            {matchingWork.youtube_embed && (
+                                <div className="pdf-viewer__audio-embed">
+                                    <h4>YouTube</h4>
+                                    <div
+                                        className="pdf-viewer__embed-container"
+                                        dangerouslySetInnerHTML={{ __html: matchingWork.youtube_embed }}
+                                    />
+                                </div>
+                            )}
+
+                            {matchingWork.bandcamp_embed && (
+                                <div className="pdf-viewer__audio-embed">
+                                    <h4>Bandcamp</h4>
+                                    <div
+                                        className="pdf-viewer__embed-container"
+                                        dangerouslySetInnerHTML={{ __html: matchingWork.bandcamp_embed }}
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
