@@ -1,6 +1,7 @@
 import "./Music.scss"
 
 import Bio from "../../components/Bio/Bio"
+import Contact from "../../components/Contact/Contact"
 import Footer from "../../components/Footer/Footer"
 import Hero from "../../components/Hero/Hero"
 import { Link } from "../../types/link"
@@ -15,7 +16,7 @@ const Music = () => {
         { label: "About", url: "#about" },
         { label: "Scores", url: "#scores" },
         { label: "Works", url: "#works" },
-        { label: "Videos", url: "#video" },
+        //{ label: "Videos", url: "#video" },
         { label: "Contact", url: "#contact" },
     ]
 
@@ -38,6 +39,8 @@ const Music = () => {
             <Scores />
             <Parallax />
             <Works />
+            <Parallax />
+            <Contact backgroundColor="black" />
             <Footer backgroundColor="black" />
 
         </>
