@@ -181,7 +181,9 @@
 .theme-toggle__icon {
     width: 18px;
     height: 18px;
-    filter: brightness(0) invert(1);
+    //filter: brightness(0) invert(1);
+    filter: brightness(1);
+    -webkit-filter: brightness(1);
 }
 
 .theme-toggle__labels {
