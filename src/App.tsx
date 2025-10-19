@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import AllReviews from './pages/AllReviews/AllReviews'
 import Error404 from './pages/Error404/Error404'
 import Home from "./pages/Home/Home"
-import Landing from "./pages/Landing/Landing"
 import Music from './pages/Music/Music'
 import ProgressBar from './components/ProgressBar/ProgressBar'
 import ScrollArrow from './components/ScrollArrow/ScrollArrow'
@@ -29,7 +28,6 @@ const App = () => {
     <>
       {mainLayout && <ProgressBar />}
       <Routes>
-        <Route path="/welcome" element={<Landing />} />
         <Route path="/" element={<Home />} />
         <Route path="/music" element={<Music />} />
         <Route path="*" element={<Error404 />} />
