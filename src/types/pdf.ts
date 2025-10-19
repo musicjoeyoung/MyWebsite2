@@ -4,4 +4,5 @@ export interface PDFDocument {
     storageKey: string;
     name?: string;
     url?: string;
+    description?: string;
 }
