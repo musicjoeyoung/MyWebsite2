@@ -57,7 +57,7 @@ const Home = () => {
             <Parallax />
             <Reviews />
             <Parallax />
-            <Contact />
+            <Contact backgroundColor="#073b4c" />
             <Parallax />
             <Footer />
         </>
