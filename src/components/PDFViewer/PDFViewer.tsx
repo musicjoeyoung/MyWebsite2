@@ -4,7 +4,7 @@ import './PDFViewer.scss';
 
 import { ChevronLeft, ChevronRight, RotateCcw, ZoomIn, ZoomOut } from 'lucide-react';
 import { Document, Page, pdfjs } from 'react-pdf';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { PDFDocument } from '../../types/pdf';
 import { Work } from '../../types/works';
@@ -21,6 +21,16 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
     const [currentPagePair, setCurrentPagePair] = useState<number>(1);
     const [scale, setScale] = useState<number>(0.8);
     const [loading, setLoading] = useState<boolean>(false);
+    const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 600);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 480);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const onDocumentLoadSuccess = useCallback(({ numPages }: { numPages: number }) => {
         setNumPages(numPages);
@@ -33,12 +43,14 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
     }, []);
 
     const goToPreviousPages = useCallback(() => {
-        setCurrentPagePair(prev => Math.max(1, prev - 2));
-    }, []);
+        const step = isMobile ? 1 : 2;
+        setCurrentPagePair(prev => Math.max(1, prev - step));
+    }, [isMobile]);
 
     const goToNextPages = useCallback(() => {
-        setCurrentPagePair(prev => Math.min(numPages - 1, prev + 2));
-    }, [numPages]);
+        const step = isMobile ? 1 : 2;
+        setCurrentPagePair(prev => Math.min(isMobile ? numPages : numPages - 1, prev + step));
+    }, [numPages, isMobile]);
 
     const zoomIn = useCallback(() => {
         setScale(prev => Math.min(2, prev + 0.1));
@@ -105,9 +117,9 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
     }
 
     const leftPage = currentPagePair;
-    const rightPage = currentPagePair + 1;
+    const rightPage = isMobile ? null : currentPagePair + 1;
     const canGoBack = currentPagePair > 1;
-    const canGoForward = currentPagePair + 1 < numPages;
+    const canGoForward = isMobile ? currentPagePair < numPages : currentPagePair + 1 < numPages;
 
     return (
         <div className="pdf-viewer">
@@ -116,7 +128,10 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
                     <div className="pdf-viewer__header-info">
                         <h1>{selectedPDF.name || selectedPDF.filename || 'Unknown PDF'}</h1>
                         <p>
-                            Pages {leftPage}{rightPage <= numPages ? `-${rightPage}` : ''} of {numPages}
+                            {isMobile ?
+                                `Page ${leftPage} of ${numPages}` :
+                                `Pages ${leftPage}${rightPage && rightPage <= numPages ? `-${rightPage}` : ''} of ${numPages}`
+                            }
                         </p>
                     </div>
 
@@ -216,7 +231,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
                                 />
                             </div>
 
-                            {rightPage <= numPages && (
+                            {!isMobile && rightPage && rightPage <= numPages && (
                                 <div className="pdf-viewer__page-wrapper">
                                     <Page
                                         pageNumber={rightPage}

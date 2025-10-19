@@ -82,6 +82,13 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+
+            @media (max-width: 479px) {
+                flex-direction: column;
+                gap: 0.75rem;
+                width: 100%;
+                margin-top: 1rem;
+            }
         }
     }
 
@@ -183,6 +190,10 @@
         justify-content: center;
         min-height: 100%;
         padding: 2rem;
+
+        @media (max-width: 479px) {
+            padding: 1rem 0.5rem;
+        }
     }
 
     &__pages-container {
@@ -190,6 +201,11 @@
         gap: 1.5rem;
         align-items: flex-start;
         justify-content: center;
+
+        @media (max-width: 479px) {
+            gap: 0;
+            justify-content: center;
+        }
     }
 
     &__page-wrapper {
