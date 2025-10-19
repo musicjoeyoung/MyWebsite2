@@ -1,6 +1,65 @@
 import "./Works.scss"
 
+import { useEffect, useState } from 'react';
+
+import { Work } from '../../types/works';
+import worksData from '../../assets/data/works.json';
+
 const Works = () => {
+    const [works, setWorks] = useState<Work[]>([]);
+
+    useEffect(() => {
+        setWorks(worksData as Work[]);
+    }, []);
+
+    //find the appropriate link for a work title
+    const getWorkLink = (title: string): string | null => {
+        const work = works.find(w => {
+            const cleanWorkTitle = w.title
+                .replace(/[-_]/g, ' ')
+                .replace(/\s+/g, ' ')
+                .trim();
+            const cleanTitle = title
+                .replace(/[-_]/g, ' ')
+                .replace(/\s+/g, ' ')
+                .trim();
+
+            return cleanWorkTitle.toLowerCase() === cleanTitle.toLowerCase();
+        });
+
+        if (!work) {
+            console.log(`No matching work found for: "${title}"`);
+            return null;
+        }
+
+        //Priority: YouTube link first, then SoundCloud link, then Bandcamp link
+        const link = work.youtube_link || work.soundcloud_link || work.bandcamp_link || null;
+        if (link) {
+            console.log(`Found link for "${title}": ${link}`);
+        }
+        return link;
+    };
+
+    //render work title (with link if i have it)
+    const WorkTitle = ({ title }: { title: string }) => {
+        const link = getWorkLink(title);
+
+        if (link) {
+            return (
+                <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="work-title-link"
+                >
+                    {title}
+                </a>
+            );
+        }
+
+        return <span>{title}</span>;
+    };
+
     return (
         <div className="works" id="works">
             <h2>Works</h2>
@@ -8,51 +67,51 @@ const Works = () => {
                 <h3>Works</h3>
                 <h4>Large ensemble</h4>
                 <ul>
-                    <li>Of the Troops </li>
-                    <li>Confidence & Validation</li>
+                    <li><WorkTitle title="Of the Troops" /></li>
+                    <li><WorkTitle title="Confidence & Validation" /></li>
                 </ul>
                 <h4>Opera</h4>
                 <ul>
-                    <li>Taxi Driver</li>
-                    <li>MarShawn</li>
+                    <li><WorkTitle title="Taxi Driver" /></li>
+                    <li><WorkTitle title="MarShawn" /></li>
                 </ul>
                 <h4>Chamber</h4>
                 <ul>
-                    <li>Searching For Gold</li>
-                    <li>Kandinsky & Coffee</li>
-                    <li>Intrusive Thoughts</li>
-                    <li>Any Moment Now</li>
-                    <li>What Charm You Have in Midst of Crises/edit format</li>
-                    <li>At the First Sight of Gold</li>
-                    <li>Anam Cara</li>
-                    <li>Roses & Arrows</li>
-                    <li>Her Father’s Funeral</li>
-                    <li>Journal Entries</li>
-                    <li>Hydrogen</li>
-                    <li>Fanfare</li>
+                    <li><WorkTitle title="Searching For Gold" /></li>
+                    <li><WorkTitle title="Kandinsky & Coffee" /></li>
+                    <li><WorkTitle title="Intrusive Thoughts" /></li>
+                    <li><WorkTitle title="Any Moment Now" /></li>
+                    <li><WorkTitle title="What Charm You Have in Midst of Crises" /></li>
+                    <li><WorkTitle title="At the First Sight of Gold" /></li>
+                    <li><WorkTitle title="Anam Cara" /></li>
+                    <li><WorkTitle title="Roses & Arrows" /></li>
+                    <li><WorkTitle title="Her Father's Funeral" /></li>
+                    <li><WorkTitle title="Journal Entries" /></li>
+                    <li><WorkTitle title="Hydrogen" /></li>
+                    <li><WorkTitle title="Fanfare" /></li>
                 </ul>
                 <h4>Duo</h4>
                 <ul>
-                    <li>Romans 14:7</li>
-                    <li>Cody</li>
+                    <li><WorkTitle title="Romans 14: 7" /></li>
+                    <li><WorkTitle title="Cody" /></li>
                 </ul>
                 <h4>Solo</h4>
                 <ul>
-                    <li>Short Term Memory</li>
-                    <li>Skipping & Stepping</li>
-                    <li>Any Day Now</li>
-                    <li>Majesty & Madness</li>
-                    <li>Panic Attack</li>
-                    <li>Consistency</li>
+                    <li><WorkTitle title="Short Term Memory" /></li>
+                    <li><WorkTitle title="Skipping & Stepping" /></li>
+                    <li><WorkTitle title="Any Day Now" /></li>
+                    <li><WorkTitle title="Majesty & Madness" /></li>
+                    <li><WorkTitle title="Panic Attack" /></li>
+                    <li><WorkTitle title="Consistency" /></li>
                 </ul>
                 <h4>Choral</h4>
                 <ul>
-                    <li>Anabelle</li>
+                    <li><WorkTitle title="Anabelle" /></li>
                 </ul>
                 <h4>Other</h4>
                 <ul>
-                    <li>Isabella</li>
-                    <li>Muliebris (no score)</li>
+                    <li><WorkTitle title="Isabella" /></li>
+                    <li><WorkTitle title="Muliebris (no score)" /></li>
                 </ul>
             </section >
             <h3>Albums</h3>
