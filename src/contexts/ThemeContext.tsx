@@ -36,6 +36,30 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
         } catch (error) {
             console.error(error)
         }
+
+        // Update the theme-color meta tag for mobile status bar
+        const updateThemeColor = () => {
+            const color = theme === "music" ? "#000000" : "#073b4c";
+
+            let themeColorMeta = document.querySelector('meta[name="theme-color"]');
+            if (!themeColorMeta) {
+                themeColorMeta = document.createElement('meta');
+                themeColorMeta.setAttribute('name', 'theme-color');
+                document.head.appendChild(themeColorMeta);
+            }
+            themeColorMeta.setAttribute('content', color);
+
+            // Also update apple-mobile-web-app-status-bar-style for iOS
+            let appleStatusMeta = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
+            if (!appleStatusMeta) {
+                appleStatusMeta = document.createElement('meta');
+                appleStatusMeta.setAttribute('name', 'apple-mobile-web-app-status-bar-style');
+                document.head.appendChild(appleStatusMeta);
+            }
+            appleStatusMeta.setAttribute('content', 'default');
+        };
+
+        updateThemeColor();
     }, [theme]);
 
     const setTheme = (next: SiteTheme) => {
