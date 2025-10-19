@@ -46,7 +46,7 @@ export const PDFSelector: React.FC<PDFSelectorProps> = ({
         try {
             const response = await axios.get<PDFDocument[]>('https://josephmyoung-back.musicjoeyoung.workers.dev/api/pdfs');
             setScores(response.data);
-            console.log("Fetched PDFs:", response.data);
+            //console.log("Fetched PDFs:", response.data);
         } catch (error) {
             console.error("Error fetching PDFs:", error);
         }
@@ -66,11 +66,12 @@ export const PDFSelector: React.FC<PDFSelectorProps> = ({
 
             <div className="pdf-grid" id="scores">
                 {scores.map((score) => {
-                    const doc = {
+                    const doc: PDFDocument = {
                         id: score.id,
-                        name: (score as PDFDocument).filename ?? (score as PDFDocument).filename ?? 'Untitled',
+                        filename: score.filename,
+                        storageKey: score.storageKey,
+                        name: score.filename ?? 'Untitled',
                         url: `https://josephmyoung-back.musicjoeyoung.workers.dev/api/pdfs/${score.id}/file`,
-
                     };
 
                     return (

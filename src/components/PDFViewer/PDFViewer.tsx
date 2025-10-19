@@ -80,9 +80,9 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
             return titleLower.includes(pdfLower) || pdfLower.includes(titleLower);
         });
 
-        // Debug logging
+        //debug
         if (matchedWork) {
-            console.log(`Found matching work for PDF "${cleanPDFName}": "${matchedWork.title}"`);
+            //console.log(`Found matching work for PDF "${cleanPDFName}": "${matchedWork.title}"`);
         }
 
         return matchedWork;

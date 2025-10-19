@@ -30,7 +30,10 @@ const Navbar: React.FC<NavbarProps> = ({ links, backgroundColor }) => {
                     <span></span>
                 </div>
             </div>
-            <ul className={`navbar__ul ${isOpen ? "navbar__ul--open" : ""}`}>
+            <ul
+                className={`navbar__ul ${isOpen ? "navbar__ul--open" : ""}`}
+                style={isOpen ? { backgroundColor: theme === "music" ? "black" : "#084053" } : {}}
+            >
                 <a href="/" className="navbar__logo-a"><img src={jy} alt="JY logo" className="navbar__logo" /></a>
                 {/* <a href="/welcome" className="navbar__logo-a"><img src={jy} alt="JY logo" className="navbar__logo" /></a> */}
                 {links.map((link, index) => (

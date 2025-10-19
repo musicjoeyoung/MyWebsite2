@@ -75,7 +75,6 @@
         &--open {
             display: flex;
             transform: translateY(0);
-            background-color: $background2;
             border: 1px solid whitesmoke;
 
             @include tablet {
@@ -182,7 +181,7 @@
 .theme-toggle__icon {
     width: 18px;
     height: 18px;
-    filter: brightness(0.3);
+    filter: brightness(0) invert(1);
 }
 
 .theme-toggle__labels {
@@ -199,6 +198,7 @@
     height: 16px;
     opacity: 0.6;
     transition: opacity 0.3s ease;
+    filter: brightness(0) invert(1);
 }
 
 .theme-toggle__label--dev {

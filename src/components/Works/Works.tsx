@@ -28,14 +28,14 @@ const Works = () => {
         });
 
         if (!work) {
-            console.log(`No matching work found for: "${title}"`);
+            //console.log(`No matching work found for: "${title}"`);
             return null;
         }
 
         //Priority: YouTube link first, then SoundCloud link, then Bandcamp link
         const link = work.youtube_link || work.soundcloud_link || work.bandcamp_link || null;
         if (link) {
-            console.log(`Found link for "${title}": ${link}`);
+            //console.log(`Found link for "${title}": ${link}`);
         }
         return link;
     };
