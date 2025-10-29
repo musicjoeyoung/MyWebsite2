@@ -1,5 +1,19 @@
 [
   {
+    "title": "World's Most Secure Date Picker",
+    "headline": "My submission for Nordcraft's Bad UX challenge",
+    "urls": [
+      "https://bad-date-picker.netlify.app/"
+    ],
+    "repo_urls": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/musicjoeyoung/BadDatePicker"
+      }
+    ],
+    "description": "Why type your birthday like a normal person when you can sweat for it? This date picker uses AI-powered pose detection to track jumping jacks. Want to enter your birth month? Better start jumping. Each jump increments the number. No shortcuts, no mercy."
+  },
+  {
     "title": "Code Explainer Tutor",
     "headline": "Winner of Vibe Summer Hackathon - Week 4",
     "urls": [
