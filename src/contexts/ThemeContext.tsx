@@ -16,14 +16,18 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const getInitialTheme = (): SiteTheme => {
-        try {
-            const stored = localStorage.getItem("site-theme");
-            if (stored === "dev" || stored === "music") return stored;
-        } catch (error) {
-            console.error(error)
-        }
+        // Prioritize URL path to ensure toggle matches the current page
         if (typeof window !== "undefined") {
-            return window.location.pathname.includes("/music") ? "music" : "dev";
+            const pathTheme = window.location.pathname.includes("/music") ? "music" : "dev";
+
+            // Update localStorage to match the current path
+            try {
+                localStorage.setItem("site-theme", pathTheme);
+            } catch (error) {
+                console.error(error);
+            }
+
+            return pathTheme;
         }
         return "dev";
     };
