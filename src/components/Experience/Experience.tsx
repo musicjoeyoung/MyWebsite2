@@ -7,18 +7,32 @@ const Experience = () => {
       <p>(click roles to see more information)</p>
       <ul className="experience__ul">
         <details>
+          <details>
+            <summary>
+              <span>Developer Full-Stack - JetBlue</span> - New
+              York, NY - October 2025 - current
+            </summary>
+            <ul>
+              <li>Builds and maintains customer-facing interfaces for web check-in platform using Angular and TypeScript as well as development for airport kiosks, focusing on accessibility, performance, and reliability.</li>
+              <li>Develops backend services and business logic in Java to support mobile app and omnichannel experiences.</li>
+              <li>Integrates middleware and service communication patterns across REST, messaging, and real-time channels for resilient data flows.</li>
+              <li>Produces clear technical documentation, implementation notes, and handoff guides to support cross-team delivery and operations.</li>
+              <li>Collaborates in code reviews and architecture discussions, helping drive consistent standards and scalable design decisions.</li>
+              <li>Partners with infrastructure and operations teams to ensure smooth deployments, monitoring, and audit-ready compliance.</li>
+            </ul>
+          </details>
           <summary>
             <span>Full Stack Engineer - Becoming You Labs</span> - New
             York, NY - September 2025 - September 2025
           </summary>
           <ul>
-            <li>Builds and maintains responsive web applications using React and Next.js, translating designs into pixel-perfect, accessible, and performant interfaces.</li>
-            <li>Designs and implements APIs, services, and data pipelines, while integrating third-party systems such as payments, analytics, LMS, and HRIS platforms.</li>
-            <li>Optimizes user interfaces for speed, accessibility, and experience, ensuring that frontend and backend systems are reliable, secure, and scalable.</li>
-            <li>Works across relational and non-relational databases—including PostgreSQL and MySQL—writing clean, performant queries and designing efficient data models.</li>
-            <li>Collaborates with the data team to support analytics, reporting, and research, and with product and design to bring features from concept to launch.</li>
-            <li>Supports CI/CD pipelines, automated testing, and cloud deployments, while monitoring system health, uptime, and observability.</li>
-            <li>Contributes to ongoing infrastructure improvements and participates in code reviews, pair programming, and engineering discussions.</li>
+            <li>Built and maintained responsive web applications using React and Next.js, translating designs into pixel-perfect, accessible, and performant interfaces.</li>
+            <li>Designed and implemented APIs, services, and data pipelines, while integrating third-party systems such as payments, analytics, LMS, and HRIS platforms.</li>
+            <li>Optimized user interfaces for speed, accessibility, and experience, ensuring that frontend and backend systems were reliable, secure, and scalable.</li>
+            <li>Worked across relational and non-relational databases—including PostgreSQL and MySQL—writing clean, performant queries and designing efficient data models.</li>
+            <li>Collaborated with the data team to support analytics, reporting, and research, and with product and design to bring features from concept to launch.</li>
+            <li>Supported CI/CD pipelines, automated testing, and cloud deployments, while monitoring system health, uptime, and observability.</li>
+            <li>Contributed to ongoing infrastructure improvements and participated in code reviews, pair programming, and engineering discussions.</li>
           </ul>
         </details>
         <details>
