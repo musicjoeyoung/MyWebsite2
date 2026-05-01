@@ -3,6 +3,50 @@
 .experience {
     @include section;
 
+    &__toggle {
+        margin: 1rem 0 2rem;
+        display: inline-flex;
+        gap: 0.5rem;
+        padding: 0.35rem;
+        border-radius: 999px;
+        background: rgba(7, 59, 76, 0.25);
+        border: 1px solid rgba(9, 76, 98, 0.6);
+    }
+
+    &__toggle-btn {
+        border: none;
+        background: transparent;
+        color: #c9d7df;
+        padding: 0.5rem 1.1rem;
+        border-radius: 999px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition:
+            background-color 0.25s ease,
+            color 0.25s ease,
+            transform 0.2s ease;
+
+        &:hover {
+            background: rgba(16, 117, 151, 0.35);
+            color: #ecf0f1;
+        }
+
+        &.is-active {
+            background: #107597;
+            color: #ecf0f1;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(7, 59, 76, 0.35);
+        }
+    }
+
+    &__timeline {
+        margin-top: 1.5rem;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(9, 76, 98, 0.35);
+    }
+
     &__ul {
         padding-inline: 0;
         details {
