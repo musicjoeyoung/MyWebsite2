@@ -3,6 +3,14 @@
 .experience {
     @include section;
 
+    &--timeline {
+        padding: 1rem 0 0 0;
+
+        .experience__timeline {
+            border-radius: 0;
+        }
+    }
+
     &__toggle {
         margin: 1rem 0 2rem;
         display: inline-flex;

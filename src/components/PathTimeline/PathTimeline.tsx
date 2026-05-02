@@ -62,8 +62,6 @@ function Card({ entry, visible }: CardProps) {
                 } as React.CSSProperties}
             >
                 <div className="pt-card__glow" />
-                <div className="pt-card__stripe" />
-
                 <div className="pt-card__header">
                     <div
                         className="pt-card__icon-wrap"
@@ -207,7 +205,7 @@ function Segment({ fromEntry, toEntry }: SegmentProps) {
                 ))}
             </div>
             <span className="pt-segment__label">
-                {toEntry.company} →
+                {toEntry.company}
             </span>
         </div>
     );

@@ -17,7 +17,10 @@ const Experience = () => {
   const isListView = viewMode === "list";
 
   return (
-    <div className="experience" id="experience">
+    <div
+      className={`experience${isListView ? " experience--list" : " experience--timeline"}`}
+      id="experience"
+    >
       <h2>Experience</h2>
       <div className="experience__toggle" role="group" aria-label="Experience view">
         <button
