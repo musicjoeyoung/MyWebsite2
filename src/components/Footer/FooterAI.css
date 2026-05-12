@@ -1,0 +1,32 @@
+/* ================================================================
+   FOOTER AI — PATHTIMELINE-THEMED
+   ================================================================ */
+
+.footer-ai {
+  --bg: #0a0d12;
+  --text-secondary: #8a90a0;
+
+  background: var(--bg);
+  color: var(--text-secondary);
+  font-family: "Raleway", "DM Sans", system-ui, -apple-system, sans-serif;
+  padding: 2rem 5rem;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.footer-ai::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #2a5298 30%, #3b6fc4 50%, #2a5298 70%, transparent);
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer-ai {
+    padding: 2rem 1.5rem;
+  }
+}
