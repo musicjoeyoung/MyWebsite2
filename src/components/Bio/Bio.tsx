@@ -1,9 +1,11 @@
 import "./Bio.scss"
 
 import { BioProps } from "../../types/bio"
-import profilePhoto from "../../assets/images/Joe.jpg"
+import profilePhoto from "../../assets/images/Joe.png"
+import { useTheme } from "../../contexts/ThemeContext"
 
 const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
+    const { theme } = useTheme();
     return (
         <div className="bio" id="about" style={{ backgroundColor: backgroundColor }}>
             <h2>About Me</h2>
@@ -20,7 +22,7 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                         {bio}
                     </p>
                 </div>
-                {!window.location.pathname.includes('/music') && (
+                {theme === 'dev' && (
                     <div className="icon-container">
                         {/* Frontend/UI Technologies */}
                         <img
@@ -119,6 +121,15 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                             height={60}
                         />
 
+                        <img
+                            className="icon-container__icon"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
+                            alt="Java"
+                            width={60}
+                            height={60}
+                        />
+
+
                         {/* Databases */}
                         <img
                             className="icon-container__icon"
@@ -175,7 +186,7 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                         {/* Tools */}
                         <img
                             className="icon-container__icon"
-                            src="https://zod.dev/logo.svg"
+                            src="https://zod.dev/logo/logo-glow.png"
                             alt="Zod"
                             width={60}
                             height={60}

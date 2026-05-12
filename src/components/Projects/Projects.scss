@@ -1,5 +1,17 @@
 @use "../../styles/partials/index" as *;
 
+@property --angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 1turn;
+    }
+}
+
 .projects {
     @include section;
 
@@ -29,6 +41,28 @@
             filter: brightness(110%);
         }
     }
+
+    &__headline {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        position: relative;
+        display: inline-block;
+        padding: 0.3rem 0.5rem;
+        border: none;
+        background: conic-gradient(from var(--angle), $link-hover, $review-background1, $link-hover);
+        color: white;
+        --angle: 0turn;
+        animation: rotate 3s linear infinite;
+        will-change: --angle;
+        border-radius: 8px;
+    }
+    @keyframes rotate {
+        to {
+            --angle: 1turn;
+        }
+    }
+
     &__container:hover &__project:not(:hover) {
         filter: brightness(80%);
         opacity: 0.7;

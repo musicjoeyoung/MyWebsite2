@@ -5,10 +5,11 @@ import { useState } from "react"
 
 interface Project {
     title: string;
+    headline: string;
     description: string;
     img_url: string;
-    url: string;
-    repo_url: string;
+    urls: (string | { name: string; url: string })[];
+    repo_urls: ({ name: string; url: string } | string)[];
 }
 
 const Projects: React.FC = () => {
@@ -30,15 +31,77 @@ const Projects: React.FC = () => {
                 {projects.slice(0, showAll ? projects.length : 3).map((project: Project, index: number) => (
                     <div className="projects__project" key={index}>
                         <h3>{project.title}</h3>
+                        {project.headline && project.headline.trim() !== "" && (
+                            <div className="projects__headline">{project.headline}</div>
+                        )}
                         <div className="projects__img-desc-container">
-                            <a href={project.url} target="_blank" className="projects__img-a">
-                                <img className="projects__img" src={project.img_url} alt={project.title} />
-                            </a>
+                            {project.urls && project.urls.length > 0 && (
+                                (() => {
+                                    const firstUrl = project.urls[0];
+                                    if (typeof firstUrl === "string") {
+                                        return (
+                                            <a href={firstUrl} target="_blank" className="projects__img-a">
+                                                <img className="projects__img" src={project.img_url} alt={project.title} />
+                                            </a>
+                                        );
+                                    } else {
+                                        return (
+                                            <a href={firstUrl.url} target="_blank" className="projects__img-a">
+                                                <img className="projects__img" src={project.img_url} alt={project.title} />
+                                            </a>
+                                        );
+                                    }
+                                })()
+                            )}
                             <p className="projects__desc">{project.description}</p>
                         </div>
                         <div className="projects__links">
-                            <a className="projects__link" href={project.url}>Link</a>
-                            <a className="projects__link" href={project.repo_url}>GitHub</a>
+                            {project.urls && project.urls.map((urlObj, i) => {
+                                if (typeof urlObj === "string") {
+                                    return (
+                                        <a
+                                            key={urlObj + i}
+                                            className="projects__link"
+                                            href={urlObj}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >Link</a>
+                                    );
+                                } else {
+                                    return (
+                                        <a
+                                            key={urlObj.url + i}
+                                            className="projects__link"
+                                            href={urlObj.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >{urlObj.name || "Link"}</a>
+                                    );
+                                }
+                            })}
+                            {project.repo_urls && project.repo_urls.map((repoObj, i) => {
+                                if (typeof repoObj === "string") {
+                                    return (
+                                        <a
+                                            key={repoObj + i}
+                                            className="projects__link"
+                                            href={repoObj}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >GitHub</a>
+                                    );
+                                } else {
+                                    return (
+                                        <a
+                                            key={repoObj.url + i}
+                                            className="projects__link"
+                                            href={repoObj.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >{repoObj.name || "GitHub"}</a>
+                                    );
+                                }
+                            })}
                         </div>
                     </div>
                 ))}

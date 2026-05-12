@@ -1,18 +1,28 @@
 import "./Home.scss"
 
 import Bio from "../../components/Bio/Bio"
+import BioAI from "../../components/Bio/BioAI"
 import Contact from "../../components/Contact/Contact"
+import ContactAI from "../../components/Contact/ContactAI"
 import Experience from "../../components/Experience/Experience"
 import FlashlightComponent from "../../components/Flashlight/Flashlight"
 import Footer from "../../components/Footer/Footer"
+import FooterAI from "../../components/Footer/FooterAI"
 import Hero from "../../components/Hero/Hero"
+import HeroAI from "../../components/Hero/HeroAI"
 import { Link } from "../../types/link"
 import Navbar from "../../components/Navbar/Navbar"
 import Parallax from "../../components/Parallax/Parallax"
+import ParallaxAI from "../../components/Parallax/ParallaxAI"
 import Projects from "../../components/Projects/Projects"
+import ProjectsAI from "../../components/Projects/ProjectsAI"
 import Reviews from "../../components/Reviews/Reviews"
+import ReviewsAI from "../../components/Reviews/ReviewsAI"
+import { useViewStyle } from "../../contexts/ViewStyleContext"
 
 const Home = () => {
+    const { viewStyle } = useViewStyle();
+    const isAI = viewStyle === "ai";
 
     const homeLinks: Link[] = [
         { label: "Home", url: "/" },
@@ -22,7 +32,6 @@ const Home = () => {
         { label: "Reviews", url: "#reviews" },
         { label: "Resume", url: "/Joseph-Young-resume-2025.pdf" },
         { label: "Contact", url: "#contact" },
-
     ]
 
     const bio = <>I am a software engineer with multiple years of experience coding,
@@ -36,32 +45,41 @@ const Home = () => {
         Data Science with Python from MIT via EdX.org.
         <br />
         <br />
-        Fun Fact: I am also in the Army Reserves where I am an Executive
-        Officer for a military band, and we play lots of wonderful music!
+        Fun Fact: I'm a retired 20-year Veteran of the US Army.
     </>
 
+    const P = isAI ? ParallaxAI : Parallax;
+
     return (
-        <>
+        <div className={isAI ? "home home--ai" : "home"}>
             <FlashlightComponent />
             <Navbar links={homeLinks} />
-            <Hero
-                name="Joseph Young"
-                title="Software Engineer"
-                description="specializing in building and testing exceptional digital experiences. Scroll down to learn more."
-            />
-            <Parallax />
-            <Bio bio={bio} />
-            <Parallax />
-            <Projects />
-            <Parallax />
+            {isAI ? (
+                <HeroAI
+                    name="Joseph Young"
+                    title="Software Engineer"
+                    description="specializing in building and testing exceptional digital experiences. Scroll down to learn more."
+                />
+            ) : (
+                <Hero
+                    name="Joseph Young"
+                    title="Software Engineer"
+                    description="specializing in building and testing exceptional digital experiences. Scroll down to learn more."
+                />
+            )}
+            <P />
+            {isAI ? <BioAI bio={bio} /> : <Bio bio={bio} />}
+            <P />
+            {isAI ? <ProjectsAI /> : <Projects />}
+            <P />
             <Experience />
-            <Parallax />
-            <Reviews />
-            <Parallax />
-            <Contact />
-            <Parallax />
-            <Footer />
-        </>
+            <P />
+            {isAI ? <ReviewsAI /> : <Reviews />}
+            <P />
+            {isAI ? <ContactAI /> : <Contact backgroundColor="#073b4c" />}
+            <P />
+            {isAI ? <FooterAI /> : <Footer />}
+        </div>
     )
 }
 
