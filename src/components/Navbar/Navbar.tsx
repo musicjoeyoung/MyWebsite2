@@ -17,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ links, backgroundColor }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeLink, setActiveLink] = useState<string>("");
     const { theme, toggleTheme } = useTheme();
-    const { viewStyle, toggleViewStyle } = useViewStyle();
+    const { viewStyle } = useViewStyle();
     const navigate = useNavigate();
 
     const toggleMenu = () => {
@@ -58,26 +58,6 @@ const Navbar: React.FC<NavbarProps> = ({ links, backgroundColor }) => {
                         )}
                     </li>
                 ))}
-                {theme === "dev" && (
-                    <li className="navbar__li">
-                        <div className="view-toggle" role="group" aria-label="Website style">
-                            <button
-                                type="button"
-                                className={`view-toggle__btn${viewStyle === "original" ? " view-toggle__btn--active" : ""}`}
-                                onClick={toggleViewStyle}
-                            >
-                                All me!
-                            </button>
-                            <button
-                                type="button"
-                                className={`view-toggle__btn${viewStyle === "ai" ? " view-toggle__btn--active" : ""}`}
-                                onClick={toggleViewStyle}
-                            >
-                                AI
-                            </button>
-                        </div>
-                    </li>
-                )}
                 <li className="navbar__li">
                     <div className="theme-toggle">
                         <div className="theme-toggle__track" onClick={() => {
