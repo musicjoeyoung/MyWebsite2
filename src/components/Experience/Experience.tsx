@@ -33,7 +33,7 @@ const Experience = () => {
     <p>Expand each role to see more information.</p>
     <ul className="experience__ul">
     {(experienceData as ExperienceItem[]).map((item, index) => (
-      <li key={`${item.title}-${item.start}-${index}`}>
+      <li key={`${item.title}-${item.start}-${index}`} className="experience__outer-li">
         <details>
           <summary>
             <span>{item.title}</span>

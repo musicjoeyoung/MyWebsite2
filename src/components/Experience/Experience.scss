@@ -55,6 +55,10 @@
         border: 1px solid rgba(9, 76, 98, 0.35);
     }
 
+    &__outer-li {
+        list-style: none;
+    }
+
     &__ul {
         padding-inline: 0;
         details {
