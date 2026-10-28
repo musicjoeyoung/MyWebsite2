@@ -7,13 +7,13 @@ import { useTheme } from "../../contexts/ThemeContext"
 const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
     const { theme } = useTheme();
     return (
-        <div className="bio" id="about" style={{ backgroundColor: backgroundColor }}>
-            <h2>About Me</h2>
+        <section className="bio" id="about" aria-labelledby="about-heading" style={{ backgroundColor: backgroundColor }}>
+            <h2 id="about-heading">About Me</h2>
             <div className="bio__profile">
                 <img
                     className="bio__img"
                     src={profilePhoto}
-                    alt="Picture of the author"
+                    alt="Joseph Young"
                     width={500}
                     height={500}
                 />
@@ -208,7 +208,7 @@ const Bio: React.FC<BioProps> = ({ bio, backgroundColor }) => {
                     </div>
                 )}
             </div>
-        </div>
+        </section>
     )
 }
 

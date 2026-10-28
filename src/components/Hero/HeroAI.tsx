@@ -15,7 +15,7 @@ const HeroAI: React.FC<HeroProps> = ({ name, title, description }) => {
         })), []);
 
     return (
-        <main className="hero-ai">
+        <header className="hero-ai">
             <div className="hero-ai__stars" aria-hidden="true">
                 {stars.map((s) => (
                     <div
@@ -53,7 +53,7 @@ const HeroAI: React.FC<HeroProps> = ({ name, title, description }) => {
                     Scroll to explore
                 </div>
             </div>
-        </main>
+        </header>
     );
 };
 

@@ -54,30 +54,32 @@ const Home = () => {
         <div className={isAI ? "home home--ai" : "home"}>
             <FlashlightComponent />
             <Navbar links={homeLinks} />
-            {isAI ? (
-                <HeroAI
-                    name="Joseph Young"
-                    title="Software Engineer"
-                    description="specializing in building and testing exceptional digital experiences. Scroll down to learn more."
-                />
-            ) : (
-                <Hero
-                    name="Joseph Young"
-                    title="Software Engineer"
-                    description="specializing in building and testing exceptional digital experiences. Scroll down to learn more."
-                />
-            )}
-            <P />
-            {isAI ? <BioAI bio={bio} /> : <Bio bio={bio} />}
-            <P />
-            {isAI ? <ProjectsAI /> : <Projects />}
-            <P />
-            <Experience />
-            <P />
-            {isAI ? <ReviewsAI /> : <Reviews />}
-            <P />
-            {isAI ? <ContactAI /> : <Contact backgroundColor="#073b4c" />}
-            <P />
+            <main id="main-content" tabIndex={-1}>
+                {isAI ? (
+                    <HeroAI
+                        name="Joseph Young"
+                        title="Software Engineer"
+                        description="specializing in building and testing exceptional digital experiences. Scroll down to learn more."
+                    />
+                ) : (
+                    <Hero
+                        name="Joseph Young"
+                        title="Software Engineer"
+                        description="specializing in building and testing exceptional digital experiences. Scroll down to learn more."
+                    />
+                )}
+                <P />
+                {isAI ? <BioAI bio={bio} /> : <Bio bio={bio} />}
+                <P />
+                {isAI ? <ProjectsAI /> : <Projects />}
+                <P />
+                <Experience />
+                <P />
+                {isAI ? <ReviewsAI /> : <Reviews />}
+                <P />
+                {isAI ? <ContactAI /> : <Contact backgroundColor="#073b4c" />}
+                <P />
+            </main>
             {isAI ? <FooterAI /> : <Footer />}
         </div>
     )

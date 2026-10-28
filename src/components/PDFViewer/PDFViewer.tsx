@@ -11,6 +11,21 @@ import { Work } from '../../types/works';
 
 pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
 
+const addIframeTitle = (embed: string, title: string): string => {
+    const parsedEmbed = new DOMParser().parseFromString(embed, 'text/html');
+    const iframes = parsedEmbed.querySelectorAll('iframe');
+
+    if (iframes.length === 0) {
+        throw new Error(`Expected an iframe in the ${title} embed`);
+    }
+
+    iframes.forEach((iframe) => {
+        iframe.title = title;
+    });
+
+    return parsedEmbed.body.innerHTML;
+};
+
 interface PDFViewerProps {
     selectedPDF: PDFDocument | null;
     works?: Work[];
@@ -126,7 +141,7 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
             <div className="pdf-viewer__header">
                 <div className="pdf-viewer__header-content">
                     <div className="pdf-viewer__header-info">
-                        <h1>{selectedPDF.name || selectedPDF.filename || 'Unknown PDF'}</h1>
+                        <h3>{selectedPDF.name || selectedPDF.filename || 'Unknown PDF'}</h3>
                         <p>
                             {isMobile ?
                                 `Page ${leftPage} of ${numPages}` :
@@ -138,46 +153,51 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
                     <div className="pdf-viewer__header-controls">
                         <div className="pdf-viewer__zoom-controls">
                             <button
+                                type="button"
                                 onClick={zoomOut}
                                 className="pdf-viewer__zoom-controls-button"
-                                title="Zoom Out"
+                                aria-label="Zoom out"
                             >
-                                <ZoomOut />
+                                <ZoomOut aria-hidden="true" />
                             </button>
-                            <span className="pdf-viewer__zoom-controls-percentage">
+                            <span className="pdf-viewer__zoom-controls-percentage" aria-live="polite" aria-atomic="true">
                                 {Math.round(scale * 100)}%
                             </span>
                             <button
+                                type="button"
                                 onClick={zoomIn}
                                 className="pdf-viewer__zoom-controls-button"
-                                title="Zoom In"
+                                aria-label="Zoom in"
                             >
-                                <ZoomIn />
+                                <ZoomIn aria-hidden="true" />
                             </button>
                             <button
+                                type="button"
                                 onClick={resetZoom}
                                 className="pdf-viewer__zoom-controls-button pdf-viewer__zoom-controls-reset"
-                                title="Reset Zoom"
+                                aria-label="Reset zoom"
                             >
-                                <RotateCcw />
+                                <RotateCcw aria-hidden="true" />
                             </button>
                         </div>
 
                         <button
+                            type="button"
                             onClick={goToPreviousPages}
                             disabled={!canGoBack}
                             className="pdf-viewer__nav-button"
                         >
-                            <ChevronLeft />
+                            <ChevronLeft aria-hidden="true" />
                             Previous
                         </button>
                         <button
+                            type="button"
                             onClick={goToNextPages}
                             disabled={!canGoForward}
                             className="pdf-viewer__nav-button"
                         >
                             Next
-                            <ChevronRight />
+                            <ChevronRight aria-hidden="true" />
                         </button>
                     </div>
                 </div>
@@ -185,9 +205,9 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
 
             <div className="pdf-viewer__content">
                 {loading && (
-                    <div className="pdf-viewer__loading">
+                    <div className="pdf-viewer__loading" role="status" aria-live="polite">
                         <div className="pdf-viewer__loading-content">
-                            <div className="pdf-viewer__loading-spinner"></div>
+                            <div className="pdf-viewer__loading-spinner" aria-hidden="true"></div>
                             <span>Loading PDF...</span>
                         </div>
                     </div>
@@ -199,13 +219,13 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
                         onLoadSuccess={onDocumentLoadSuccess}
                         onLoadStart={onDocumentLoadStart}
                         loading={
-                            <div className="pdf-viewer__loading-content">
-                                <div className="pdf-viewer__loading-spinner"></div>
+                            <div className="pdf-viewer__loading-content" role="status" aria-live="polite">
+                                <div className="pdf-viewer__loading-spinner" aria-hidden="true"></div>
                                 <span>Loading PDF...</span>
                             </div>
                         }
                         error={
-                            <div className="pdf-viewer__error">
+                            <div className="pdf-viewer__error" role="alert">
                                 <p className="pdf-viewer__error-title">Error loading PDF</p>
                                 <p className="pdf-viewer__error-message">
                                     This PDF cannot be loaded due to CORS restrictions or the file may be unavailable.
@@ -262,7 +282,12 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
                                     <h4>SoundCloud</h4>
                                     <div
                                         className="pdf-viewer__embed-container"
-                                        dangerouslySetInnerHTML={{ __html: matchingWork.soundcloud_embed }}
+                                        dangerouslySetInnerHTML={{
+                                            __html: addIframeTitle(
+                                                matchingWork.soundcloud_embed,
+                                                `SoundCloud player for ${matchingWork.title}`
+                                            ),
+                                        }}
                                     />
                                 </div>
                             )}
@@ -272,7 +297,12 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
                                     <h4>YouTube</h4>
                                     <div
                                         className="pdf-viewer__embed-container"
-                                        dangerouslySetInnerHTML={{ __html: matchingWork.youtube_embed }}
+                                        dangerouslySetInnerHTML={{
+                                            __html: addIframeTitle(
+                                                matchingWork.youtube_embed,
+                                                `YouTube player for ${matchingWork.title}`
+                                            ),
+                                        }}
                                     />
                                 </div>
                             )}
@@ -282,7 +312,12 @@ export const PDFViewer: React.FC<PDFViewerProps> = ({ selectedPDF, works = [] })
                                     <h4>Bandcamp</h4>
                                     <div
                                         className="pdf-viewer__embed-container"
-                                        dangerouslySetInnerHTML={{ __html: matchingWork.bandcamp_embed }}
+                                        dangerouslySetInnerHTML={{
+                                            __html: addIframeTitle(
+                                                matchingWork.bandcamp_embed,
+                                                `Bandcamp player for ${matchingWork.title}`
+                                            ),
+                                        }}
                                     />
                                 </div>
                             )}

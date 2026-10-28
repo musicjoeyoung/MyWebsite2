@@ -1,6 +1,7 @@
 import './App.scss'
 
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
+import { useEffect } from "react"
 
 import AllReviews from './pages/AllReviews/AllReviews'
 import Error404 from './pages/Error404/Error404'
@@ -24,8 +25,22 @@ const App = () => {
   const location = useLocation();
   const mainLayout = location.pathname !== "/welcome"
 
+  useEffect(() => {
+    const pageTitles: Record<string, string> = {
+      "/": "Joseph M. Young - Software Engineer",
+      "/music": "Joseph M. Young - Composer and Musician",
+      "/all-reviews": "All Reviews - Joseph M. Young",
+      "/weather": "Weather - Joseph M. Young",
+      "/timer": "Countdown Timer - Joseph M. Young",
+      "/timer2": "Countdown Timer - Joseph M. Young",
+    };
+
+    document.title = pageTitles[location.pathname] ?? "Page Not Found - Joseph M. Young";
+  }, [location.pathname]);
+
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       {mainLayout && <ProgressBar />}
       <Routes>
         <Route path="/" element={<Home />} />

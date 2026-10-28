@@ -16,16 +16,16 @@ const ProjectsAI: React.FC = () => {
     const [showAll, setShowAll] = useState(false);
 
     const handleToggle = () => {
-        setTimeout(() => setShowAll(!showAll), 50);
         if (showAll) {
             document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
         }
+        setShowAll((showingAll) => !showingAll);
     };
 
     return (
-        <div className="projects-ai" id="projects">
-            <h2 className="projects-ai__heading">Projects</h2>
-            <div className="projects-ai__container">
+        <section className="projects-ai" id="projects" aria-labelledby="projects-ai-heading">
+            <h2 className="projects-ai__heading" id="projects-ai-heading">Projects</h2>
+            <div className="projects-ai__container" id="projects-list">
                 {projects
                     .slice(0, showAll ? projects.length : 3)
                     .map((project: Project, index: number) => (
@@ -54,7 +54,7 @@ const ProjectsAI: React.FC = () => {
                             <div className="projects-ai__links">
                                 {project.urls && project.urls.map((urlObj, i) => {
                                     const href = typeof urlObj === "string" ? urlObj : urlObj.url;
-                                    const label = typeof urlObj === "string" ? "Link" : (urlObj.name || "Link");
+                                    const label = typeof urlObj === "string" ? `View ${project.title}` : (urlObj.name || `View ${project.title}`);
                                     return (
                                         <a key={href + i} className="projects-ai__link" href={href} target="_blank" rel="noopener noreferrer">
                                             {label}
@@ -63,7 +63,7 @@ const ProjectsAI: React.FC = () => {
                                 })}
                                 {project.repo_urls && project.repo_urls.map((repoObj, i) => {
                                     const href = typeof repoObj === "string" ? repoObj : repoObj.url;
-                                    const label = typeof repoObj === "string" ? "GitHub" : (repoObj.name || "GitHub");
+                                    const label = typeof repoObj === "string" ? `GitHub repository for ${project.title}` : (repoObj.name || `GitHub repository for ${project.title}`);
                                     return (
                                         <a key={href + i} className="projects-ai__link" href={href} target="_blank" rel="noopener noreferrer">
                                             {label}
@@ -74,10 +74,10 @@ const ProjectsAI: React.FC = () => {
                         </div>
                     ))}
             </div>
-            <button className="projects-ai__toggle" onClick={handleToggle}>
+            <button className="projects-ai__toggle" type="button" aria-expanded={showAll} aria-controls="projects-list" onClick={handleToggle}>
                 {showAll ? "Show Less" : "Show More"}
             </button>
-        </div>
+        </section>
     );
 };
 

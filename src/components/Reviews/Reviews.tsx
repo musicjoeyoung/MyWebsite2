@@ -28,25 +28,27 @@ const Reviews = () => {
     };
 
     return (
-        <div className="reviews" id="reviews">
+        <section className="reviews" id="reviews" aria-labelledby="reviews-heading">
 
-            <h2>Reviews</h2>
+            <h2 id="reviews-heading">Reviews</h2>
             <p>Here are some reviews from people I have either worked with or taught in the past.</p>
-            {reviews.slice(0, visibleReviews).map((review, index) => (
+            <div id="reviews-list">
+                {reviews.slice(0, visibleReviews).map((review, index) => (
                 <div key={index} className="reviews__review">
                     <div>{renderReview(review.text)}</div>
                 </div>
-            ))}
+                ))}
+            </div>
             <div className="reviews__buttons">
                 {visibleReviews === 3 && (
-                    <button onClick={showMore} className="reviews__button">Show More</button>
+                    <button type="button" aria-expanded={false} aria-controls="reviews-list" onClick={showMore} className="reviews__button">Show More</button>
                 )}
                 {visibleReviews === 10 && (
-                    <button onClick={showLess} className="reviews__button">Show Less</button>
+                    <button type="button" aria-expanded={true} aria-controls="reviews-list" onClick={showLess} className="reviews__button">Show Less</button>
                 )}
-                <button onClick={goToAllReviews} className="reviews__button">Show All Reviews</button>
+                <button type="button" onClick={goToAllReviews} className="reviews__button">Show All Reviews</button>
             </div>
-        </div>
+        </section>
     );
 };
 

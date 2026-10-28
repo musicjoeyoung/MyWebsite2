@@ -18,7 +18,7 @@ const AllReviews = () => {
     };
 
     return (
-        <div className="reviews">
+        <main className="reviews" id="main-content" tabIndex={-1}>
             <h1>All Reviews</h1>
 
             <Link to="/" className="home-link">Back to home</Link>
@@ -30,7 +30,7 @@ const AllReviews = () => {
                     </div>
                 ))}
             </ReviewsWaterfall>
-        </div>
+        </main>
     );
 };
 export default AllReviews

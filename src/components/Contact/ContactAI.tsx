@@ -15,8 +15,8 @@ const ContactAI = () => {
     };
 
     return (
-        <div className="contact-ai" id="contact">
-            <h2 className="contact-ai__heading">Contact</h2>
+        <section className="contact-ai" id="contact" aria-labelledby="contact-ai-heading">
+            <h2 className="contact-ai__heading" id="contact-ai-heading">Contact</h2>
             <p className="contact-ai__subtext">{getContactText()}</p>
 
             <div className="contact-ai__card">
@@ -24,7 +24,7 @@ const ContactAI = () => {
                 <ContactForm />
                 <IconContainer />
             </div>
-        </div>
+        </section>
     );
 };
 

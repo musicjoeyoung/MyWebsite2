@@ -25,6 +25,13 @@
     &__eraser {
         cursor: pointer;
     }
+
+    &__eraser-button {
+        padding: 0;
+        border: 0;
+        background: transparent;
+        line-height: 0;
+    }
 }
 .flash {
     position: fixed;

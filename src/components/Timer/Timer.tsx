@@ -1,13 +1,15 @@
 import "./Timer.scss";
 
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Timer: React.FC = () => {
     const [timeInput, setTimeInput] = useState("");
     const [duration, setDuration] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
     const [timerKey, setTimerKey] = useState(0);
+    const [durationError, setDurationError] = useState(false);
+    const durationInputRef = useRef<HTMLInputElement>(null);
 
     const parseTimeInput = (input: string): number => {
         const trimmedInput = input.trim();
@@ -31,6 +33,10 @@ const Timer: React.FC = () => {
             setDuration(parsedTime);
             setIsRunning(true);
             setTimerKey(prevKey => prevKey + 1);
+            setDurationError(false);
+        } else {
+            setDurationError(true);
+            durationInputRef.current?.focus();
         }
     };
 
@@ -58,18 +64,29 @@ const Timer: React.FC = () => {
     };
 
     return (
-        <div className="timer">
+        <main className="timer" id="main-content" tabIndex={-1}>
+            <h1>Countdown Timer</h1>
             <div className="timer__controls">
+                <label htmlFor="timer-duration">Duration</label>
                 <input
+                    ref={durationInputRef}
+                    id="timer-duration"
                     type="text"
                     value={timeInput}
-                    onChange={(e) => setTimeInput(e.target.value)}
+                    onChange={(e) => {
+                        setTimeInput(e.target.value);
+                        setDurationError(false);
+                    }}
                     className="timer__input"
                     placeholder="Enter time (e.g., 1:30:00, 5:00, 90)"
+                    aria-describedby={durationError ? "timer-duration-help timer-duration-error" : "timer-duration-help"}
+                    aria-invalid={durationError}
                 />
-                <button className="timer__button" onClick={handleStart}>Start</button>
-                <button className="timer__button" onClick={handleStop}>Stop</button>
-                <button className="timer__button" onClick={handleReset}>Reset</button>
+                <p id="timer-duration-help">Enter hours, minutes, and seconds, or a number of seconds.</p>
+                {durationError && <p id="timer-duration-error" role="alert">Enter a valid duration greater than zero.</p>}
+                <button type="button" className="timer__button" onClick={handleStart}>Start</button>
+                <button type="button" className="timer__button" onClick={handleStop}>Stop</button>
+                <button type="button" className="timer__button" onClick={handleReset}>Reset</button>
             </div>
             <div className="timer__container">
                 <CountdownCircleTimer
@@ -83,12 +100,14 @@ const Timer: React.FC = () => {
                 >
                     {({ remainingTime }) => (
                         <div className="timer__time">
-                            <div className="timer__text">{formatTime(remainingTime)}</div>
+                            <div className="timer__text" role="timer" aria-label="Time remaining" aria-live="off">
+                                {formatTime(remainingTime)}
+                            </div>
                         </div>
                     )}
                 </CountdownCircleTimer>
             </div>
-        </div>
+        </main>
     );
 };
 

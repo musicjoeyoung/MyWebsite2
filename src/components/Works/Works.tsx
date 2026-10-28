@@ -61,8 +61,8 @@ const Works = () => {
     };
 
     return (
-        <div className="works" id="works">
-            <h2>Works</h2>
+        <section className="works" id="works" aria-labelledby="works-heading">
+            <h2 id="works-heading">Works</h2>
             <section className="works__list">
                 <h3>Works</h3>
                 <h4>Large ensemble</h4>
@@ -115,10 +115,10 @@ const Works = () => {
                 </ul>
             </section >
             <h3>Albums</h3>
-            <iframe style={{ border: 0, width: '350px', height: '470px' }} src="https://bandcamp.com/EmbeddedPlayer/album=3145968861/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://musicjoeyoung.bandcamp.com/album/my-beautiful-beautiful-concrete-fragile-little-girl-2">My Beautiful Beautiful Concrete Fragile Little Girl by Joe Young</a></iframe>
+            <iframe title="My Beautiful Beautiful Concrete Fragile Little Girl album player" style={{ border: 0, width: '350px', height: '470px' }} src="https://bandcamp.com/EmbeddedPlayer/album=3145968861/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://musicjoeyoung.bandcamp.com/album/my-beautiful-beautiful-concrete-fragile-little-girl-2">My Beautiful Beautiful Concrete Fragile Little Girl by Joe Young</a></iframe>
 
-            <iframe style={{ border: 0, width: '350px', height: '470px', }} src="https://bandcamp.com/EmbeddedPlayer/album=779454858/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://musicjoeyoung.bandcamp.com/album/race-the-sunset">Race the Sunset by Joe Young</a></iframe>
-        </div >
+            <iframe title="Race the Sunset album player" style={{ border: 0, width: '350px', height: '470px', }} src="https://bandcamp.com/EmbeddedPlayer/album=779454858/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://musicjoeyoung.bandcamp.com/album/race-the-sunset">Race the Sunset by Joe Young</a></iframe>
+        </section >
     )
 }
 export default Works

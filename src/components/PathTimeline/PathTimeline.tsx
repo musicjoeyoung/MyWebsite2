@@ -61,7 +61,7 @@ function Card({ entry, visible }: CardProps) {
                     '--card-glow': `rgba(${rgb}, 0.12)`,
                 } as React.CSSProperties}
             >
-                <div className="pt-card__glow" />
+                <div className="pt-card__glow" aria-hidden="true" />
                 <div className="pt-card__header">
                     <div
                         className="pt-card__icon-wrap"
@@ -70,24 +70,24 @@ function Card({ entry, visible }: CardProps) {
                             border: `1px solid rgba(${rgb}, 0.25)`,
                         }}
                     >
-                        <span style={{ fontSize: '1.3rem' }}>{entry.icon}</span>
+                        <span style={{ fontSize: '1.3rem' }} aria-hidden="true">{entry.icon}</span>
                     </div>
 
                     <div className="pt-card__meta">
-                        <div className="pt-card__title">{entry.title}</div>
+                        <h3 className="pt-card__title">{entry.title}</h3>
                         <div className="pt-card__company">{entry.company}</div>
                         <div className="pt-card__location-period">
                             {entry.location ? (
                                 <>
                                     <span>{entry.location}</span>
-                                    <span className="pt-card__dot" />
+                                    <span className="pt-card__dot" aria-hidden="true" />
                                 </>
                             ) : null}
                             <span>{entry.period}</span>
                         </div>
                         {entry.current && (
                             <div className="pt-card__current">
-                                <span className="pt-card__current-dot" />
+                                <span className="pt-card__current-dot" aria-hidden="true" />
                                 Current
                             </div>
                         )}
@@ -106,6 +106,7 @@ function Card({ entry, visible }: CardProps) {
                                 >
                                     <svg
                                         className="pt-card__bullet-icon"
+                                        aria-hidden="true"
                                         viewBox="0 0 16 16"
                                         fill="none"
                                         stroke="currentColor"
@@ -187,7 +188,7 @@ function Segment({ fromEntry, toEntry }: SegmentProps) {
             className="pt-segment"
             style={{ '--particle-color': fromEntry.accent } as React.CSSProperties}
         >
-            <div className="pt-segment__particles">
+            <div className="pt-segment__particles" aria-hidden="true">
                 {particles.map((p) => (
                     <div
                         key={p.id}
@@ -224,7 +225,7 @@ export default function PathTimeline() {
     const handleScroll = useCallback(() => {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const progress = Math.min(1, Math.max(0, scrollTop / docHeight));
+        const progress = docHeight > 0 ? Math.min(1, Math.max(0, scrollTop / docHeight)) : 0;
         setScrollProgress(progress);
 
         // light orb position
@@ -268,7 +269,14 @@ export default function PathTimeline() {
     return (
         <div className="pt-root">
             {/* Progress bar */}
-            <div className="pt-progress">
+            <div
+                className="pt-progress"
+                role="progressbar"
+                aria-label="Experience timeline progress"
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-valuenow={Math.round(scrollProgress * 100)}
+            >
                 <div
                     className="pt-progress__fill"
                     style={{ width: `${scrollProgress * 100}%` }}
@@ -284,12 +292,13 @@ export default function PathTimeline() {
                         data-label={entry.company}
                         onClick={() => scrollToStop(i)}
                         aria-label={`Go to ${entry.company}`}
+                        aria-current={activeNavIndex === i ? "location" : undefined}
                     />
                 ))}
             </nav>
 
             {/* Floating light orb */}
-            <div className="pt-light-orb" style={{ top: lightTop }} />
+            <div className="pt-light-orb" style={{ top: lightTop }} aria-hidden="true" />
 
             {/* ── Timeline ─────────────────────────────────── */}
             <section className="pt-timeline" ref={timelineRef}>

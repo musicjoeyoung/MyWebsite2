@@ -5,43 +5,42 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
 }
 .weather {
     display: flex;
-    padding: 8rem;
+    flex-direction: column;
+    padding: clamp(2rem, 8vw, 8rem);
     justify-content: center;
     color: white;
 
-    &__zipCode {
-        width: "280px";
-        position: "absolute";
-    }
     &__container {
         background: #00000099;
         border: 1px solid #0000004d;
-        border-radius: 60px;
-        padding: 40px;
+        border-radius: clamp(1.5rem, 5vw, 3.75rem);
+        padding: clamp(1.5rem, 4vw, 2.5rem);
         margin: 0 auto;
-        position: absolute;
-        width: 75%;
-
-        @include tablet {
-            width: auto;
-        }
+        position: relative;
+        width: min(100%, 48rem);
+        box-sizing: border-box;
     }
     &__form {
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
         margin: 0 auto;
     }
 
     &__input {
         border-radius: 20px;
-        width: 300px;
-        height: 30px;
+        width: min(300px, 100%);
+        min-height: 44px;
         font-size: inherit;
         padding: 14px;
+        box-sizing: border-box;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         -ms-border-radius: 20px;

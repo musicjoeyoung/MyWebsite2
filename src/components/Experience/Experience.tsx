@@ -18,36 +18,39 @@ const Experience = () => {
 
   if (isAI) {
     return (
-      <div className="experience experience--timeline" id="experience">
-        <div className="experience__timeline">
-          <PathTimeline />
-        </div>
-      </div>
-    );
+    <section className="experience experience--timeline" id="experience" aria-labelledby="experience-heading">
+    <h2 className="visually-hidden" id="experience-heading">Experience</h2>
+    <div className="experience__timeline">
+      <PathTimeline />
+    </div>
+    </section>
+  );
   }
 
   return (
-    <div className="experience experience--list" id="experience">
-      <h2>Experience</h2>
-      <p>(click roles to see more information)</p>
-      <ul className="experience__ul">
-        {(experienceData as ExperienceItem[]).map((item, index) => (
-          <details key={`${item.title}-${item.start}-${index}`}>
-            <summary>
-              <span>{item.title}</span>
-              {item.location ? ` - ${item.location}` : ""} - {item.start} - {item.end}
-            </summary>
-            <ul>
-              {item.highlights.map((highlight, highlightIndex) => (
-                <li key={`${item.title}-highlight-${highlightIndex}`}>
-                  {highlight}
-                </li>
-              ))}
-            </ul>
-          </details>
-        ))}
-      </ul>
-    </div>
+  <section className="experience experience--list" id="experience" aria-labelledby="experience-heading">
+    <h2 id="experience-heading">Experience</h2>
+    <p>Expand each role to see more information.</p>
+    <ul className="experience__ul">
+    {(experienceData as ExperienceItem[]).map((item, index) => (
+      <li key={`${item.title}-${item.start}-${index}`}>
+        <details>
+          <summary>
+            <span>{item.title}</span>
+            {item.location ? ` - ${item.location}` : ""} - {item.start} - {item.end}
+          </summary>
+          <ul>
+            {item.highlights.map((highlight, highlightIndex) => (
+              <li key={`${item.title}-highlight-${highlightIndex}`}>
+                {highlight}
+              </li>
+            ))}
+          </ul>
+        </details>
+      </li>
+    ))}
+    </ul>
+  </section>
   );
 };
 export default Experience;

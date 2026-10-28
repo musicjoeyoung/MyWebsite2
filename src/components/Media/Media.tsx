@@ -20,27 +20,27 @@ const Media = () => {
     }, []);
 
     return (
-        <div className="media" id="media">
-            <h2>Media</h2>
+        <section className="media" id="media" aria-labelledby="media-heading">
+            <h2 id="media-heading">Media</h2>
             <div className="media__grid">
                 <div className="media__item">
                     <img src="https://res.cloudinary.com/dfbuwtl5q/image/upload/v1763043345/Power-Military-Music_aigfoi.jpg" alt="Power of Military Music Podcast Cover" />
-                    <iframe frameBorder="0" scrolling="no" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnyc/#file=/audio/json/1111057/&share=1"></iframe>
+                    <iframe title="Power of Military Music audio player" frameBorder="0" scrolling="no" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnyc/#file=/audio/json/1111057/&share=1"></iframe>
                     <a href="https://www.wnyc.org/story/power-military-music/"> WNYC Studios - Power of Military Music</a>
                 </div>
                 <div className="media__item">
                     <img src="https://res.cloudinary.com/dfbuwtl5q/image/upload/v1763043345/Big-Bang-In-Jazz-History_fkvk2n.jpg" alt="Notes from America Podcast Cover" />
-                    <iframe frameBorder="0" scrolling="no" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnycstudios/#file=/audio/json/1110593/&share=1"></iframe>
+                    <iframe title="Big Bang in Jazz History audio player" frameBorder="0" scrolling="no" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnycstudios/#file=/audio/json/1110593/&share=1"></iframe>
                     <a href="https://www.wnycstudios.org/podcasts/anxiety/episodes/big-bang-in-jazz-history">Notes from America with Kai Wright - Big Bang in Jazz History</a>
                 </div>
                 <div className="media__item">
                     <img src="https://res.cloudinary.com/dfbuwtl5q/image/upload/v1763043345/Open-Ears-Project_wfxsxn.jpg" alt="Open Ears Project Podcast Cover" />
-                    <iframe frameBorder="0" scrolling="no" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnycstudios/#file=/audio/json/963005/&share=1"></iframe>
+                    <iframe title="Joe Young on How We Listen audio player" frameBorder="0" scrolling="no" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnycstudios/#file=/audio/json/963005/&share=1"></iframe>
                     <a href="https://www.wnycstudios.org/podcasts/open-ears-project/episodes/joe-young-on-how-we-listen">Open Ears Project - Joe Young on How We Listen</a>
                 </div>
                 <div className="media__item">
                     <img src="https://res.cloudinary.com/dfbuwtl5q/image/upload/v1763043348/Goodbye-Old-Morning-Edition-Theme_ratyqr.jpg" alt="Goodbye Old Morning Edition Theme Podcast Cover" />
-                    <iframe frameBorder="0" scrolling="no" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnyc/#file=/audio/json/933493/&share=1"></iframe>
+                    <iframe title="Goodbye Old Morning Edition Theme audio player" frameBorder="0" scrolling="no" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnyc/#file=/audio/json/933493/&share=1"></iframe>
                     <a href="https://www.wnyc.org/story/goodbye-old-morning-edition-theme/">WNYC Studios - Goodbye Old Morning Edition Theme</a>
                 </div>
                 {/*            <div className="media__item">
@@ -54,7 +54,7 @@ const Media = () => {
                 </div> */}
             </div>
 
-        </div>
+        </section>
     )
 }
 export default Media

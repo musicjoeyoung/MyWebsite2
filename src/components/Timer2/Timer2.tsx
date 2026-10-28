@@ -10,7 +10,7 @@ function Timer2() {
     const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
-        let countdownInterval: any;
+        let countdownInterval: ReturnType<typeof setInterval> | undefined;
         if (timer > 0 && !isPaused) {
             countdownInterval = setInterval(() => {
                 setTimer((prevTimer) => prevTimer - 1);
@@ -54,53 +54,63 @@ function Timer2() {
     };
 
     return (
-        <div className="timerContainer">
+        <main className="timerContainer" id="main-content" tabIndex={-1}>
+            <h1>Countdown Timer</h1>
             <div className="timerContainer__inputContainer">
                 <div>
-                    <label className="timerContainer__label">Hours: </label>
+                    <label className="timerContainer__label" htmlFor="timer-hours">Hours</label>
                     <input
+                        id="timer-hours"
                         className="timerContainer__input"
                         type="number"
                         min="0"
+                        step="1"
                         value={hours}
-                        onChange={(e) => setHours(parseInt(e.target.value))}
+                        onChange={(e) => setHours(Number(e.target.value) || 0)}
                     />
                 </div>
                 <div>
-                    <label className="timerContainer__label">Minutes: </label>
+                    <label className="timerContainer__label" htmlFor="timer-minutes">Minutes</label>
                     <input
+                        id="timer-minutes"
                         type="number"
                         min="0"
                         max="59"
+                        step="1"
                         value={minutes}
-                        onChange={(e) => setMinutes(parseInt(e.target.value))}
+                        onChange={(e) => setMinutes(Number(e.target.value) || 0)}
                     />
                 </div>
                 <div>
-                    <label className="timerContainer__label">Seconds: </label>
+                    <label className="timerContainer__label" htmlFor="timer-seconds">Seconds</label>
                     <input
+                        id="timer-seconds"
                         type="number"
                         min="0"
                         max="59"
+                        step="1"
                         value={seconds}
-                        onChange={(e) => setSeconds(parseInt(e.target.value))}
+                        onChange={(e) => setSeconds(Number(e.target.value) || 0)}
                     />
                 </div>
             </div>
             <div className="buttonContainer">
                 <button
+                    type="button"
                     onClick={handleStart}
                     className=""
                 >
                     {!timer || isPaused ? "Start" : "Resume"}
                 </button>
                 <button
+                    type="button"
                     onClick={handleStop}
                     className=""
                 >
                     Stop
                 </button>
                 <button
+                    type="button"
                     onClick={handlePause}
                     className="buttonContainer__button"
                     disabled={!timer || isPaused}
@@ -115,6 +125,7 @@ function Timer2() {
           Resume
         </button> */}
                 <button
+                    type="button"
                     onClick={handleReset}
                     className="buttonContainer__button"
                     disabled={!timer}
@@ -124,7 +135,7 @@ function Timer2() {
             </div>
             {
                 timer > 0 ? (
-                    <div className="floatZoom">
+                    <div className="floatZoom" role="timer" aria-label="Time remaining" aria-live="off">
                         <h2 className="floatZoom__h2">
                             {Math.floor(timer / 3600)} : {Math.floor((timer % 3600) / 60)} :{" "}
                             {timer % 60}
@@ -134,7 +145,7 @@ function Timer2() {
                     <h2 className="floatZoom__h2">Timer Complete</h2>
                 )
             }
-        </div >
+        </main >
     );
 }
 

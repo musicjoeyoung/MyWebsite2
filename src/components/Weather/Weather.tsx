@@ -1,6 +1,6 @@
 import "./Weather.scss"
 
-import { ChangeEvent, useState } from "react"
+import { FormEvent, useState } from "react"
 
 import { WeatherState } from "../../types/weather"
 import axios from "axios"
@@ -11,16 +11,19 @@ const Weather = () => {
     const [weather, setWeather] = useState<WeatherState | null>(null)
     const [zipCode, setZipCode] = useState("")
     const [countryCode, /* setCountryCode */] = useState("")
+    const [weatherError, setWeatherError] = useState("")
 
     const URL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},${countryCode}&units=imperial&appid=${API_KEY}`;
 
-    const handleSubmit = async (event: ChangeEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        setWeatherError("");
         try {
             const response = await axios.get(URL);
             setWeather(response.data);
         } catch (error) {
             console.error(error)
+            setWeatherError("Unable to load the weather. Check the postal code and try again.");
         }
     }
 
@@ -54,30 +57,31 @@ const Weather = () => {
     const year = d.getFullYear();
     const fullDate: string = day + ", " + month + " " + date + ", " + year;
     return (
-        <div className="weather-background">
+        <main className="weather-background" id="main-content" tabIndex={-1}>
             <div className="weather">
-                <div className="weather__zipCode">
-                    <p style={{ marginTop: "-75px" }}>
-                        Enter a zip code to find the weather!
-                    </p>
-                </div>
                 <div className="weather__container">
+                    <h1>Weather</h1>
                     <p>{`${fullDate}`}</p>
-                    <form
-                        onSubmit={handleSubmit}
-                        className="weather__form"
-                    >
-                        <input
-                            type="text"
-                            placeholder="Enter a zip code"
-                            value={zipCode}
-                            onChange={(e) => setZipCode(e.target.value)}
-                            className="weather__input"
-                        />
+                <form
+                    onSubmit={handleSubmit}
+                    className="weather__form"
+                >
+                    <label htmlFor="zip-code">ZIP or postal code</label>
+                    <input
+                        id="zip-code"
+                        type="text"
+                        placeholder="Enter a zip code"
+                        value={zipCode}
+                        onChange={(e) => setZipCode(e.target.value)}
+                        autoComplete="postal-code"
+                        required
+                        className="weather__input"
+                    />
                         <button className="weather__button" type="submit">
                             Get Weather
                         </button>
                     </form>
+                    {weatherError && <p role="alert">{weatherError}</p>}
                     {weather ? (
                         <div /* className="weather} */>
                             <div
@@ -89,7 +93,8 @@ const Weather = () => {
                                 <h2>Weather in {weather.name}</h2>
                                 <img
                                     src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-                                    alt="Weather Icon"
+                                    alt=""
+                                    aria-hidden="true"
                                     width={70}
                                     height={70}
                                     style={{ content: "" }}
@@ -107,8 +112,8 @@ const Weather = () => {
                         <h2>No weather data to show at this time.</h2>
                     )}
                 </div>
-            </div>
         </div>
+        </main>
     )
 }
 export default Weather

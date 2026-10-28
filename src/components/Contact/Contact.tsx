@@ -15,14 +15,14 @@ const Contact = ({ backgroundColor }: { backgroundColor: string }) => {
     };
 
     return (
-        <div className="contact" id="contact" style={{ backgroundColor }}>
-            <h2>Contact</h2>
+        <section className="contact" id="contact" aria-labelledby="contact-heading" style={{ backgroundColor }}>
+            <h2 id="contact-heading">Contact</h2>
             <p>
                 {getContactText()}
             </p>
             <ContactForm />
             <IconContainer />
-        </div>
+        </section>
     );
 };
 

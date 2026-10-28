@@ -15,7 +15,12 @@
         display: block;
         cursor: pointer;
         padding: 0.5rem;
-        height: 2rem;
+        min-width: 44px;
+        min-height: 44px;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        line-height: 0;
     }
 
     &__burger {
@@ -117,6 +122,17 @@
             width: 7%;
             margin-top: 7px;
         }
+
+        &__logo-item {
+            list-style: none;
+        }
+
+        &__li a,
+        &__logo-a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+        }
     }
 
     &__logo {
@@ -152,6 +168,8 @@
     cursor: pointer;
     transition: background 0.3s ease;
     border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0;
+    color: inherit;
 }
 
 .theme-toggle__slider {
@@ -292,4 +310,3 @@
         }
     }
 }
-

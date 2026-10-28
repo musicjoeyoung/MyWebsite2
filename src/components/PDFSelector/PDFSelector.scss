@@ -20,7 +20,8 @@
 }
 
 /* Slide fully into view on hover when peeking */
-.pdf-selector.scores-visible:hover {
+.pdf-selector.scores-visible:hover,
+.pdf-selector:focus-within {
     left: 0;
 }
 

@@ -65,10 +65,11 @@
         }
 
         &-info {
-            h1 {
+            h3 {
                 font-size: 1.25rem;
                 font-weight: 600;
                 color: #1f2937;
+                margin: 0;
             }
 
             p {
@@ -147,6 +148,7 @@
 
         &:disabled {
             background-color: #d1d5db;
+            color: #374151;
             cursor: not-allowed;
         }
 

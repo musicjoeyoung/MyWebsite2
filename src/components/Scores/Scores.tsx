@@ -18,8 +18,8 @@ const Scores = () => {
     }, []);
 
     return (
-        <div className="scores" id="scores">
-            <h2>Scores</h2>
+        <section className="scores" id="scores" aria-labelledby="scores-heading">
+            <h2 id="scores-heading">Scores</h2>
             <div className="h-screen bg-gray-100 flex">
                 <PDFSelector
                     //pdfs={samplePDFs}
@@ -28,7 +28,7 @@ const Scores = () => {
                 />
                 <PDFViewer selectedPDF={selectedPDF} works={works} />
             </div>
-        </div>
+        </section>
     )
 }
 export default Scores

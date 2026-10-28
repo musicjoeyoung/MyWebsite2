@@ -28,19 +28,21 @@ const Music = () => {
     return (
         <>
             <Navbar links={musicLinks} backgroundColor="black" />
-            <div className="music-title">
-                <h1 className="wasted-font">Joseph Young</h1>
-            </div>
-            <Parallax />
-            <Bio bio={bio} backgroundColor="black" />
-            <Parallax />
-            <Scores />
-            <Parallax />
-            <Works />
-            <Parallax />
-            <Media />
-            <Parallax />
-            <Contact backgroundColor="black" />
+            <main id="main-content" tabIndex={-1}>
+                <div className="music-title">
+                    <h1 className="wasted-font">Joseph Young</h1>
+                </div>
+                <Parallax />
+                <Bio bio={bio} backgroundColor="black" />
+                <Parallax />
+                <Scores />
+                <Parallax />
+                <Works />
+                <Parallax />
+                <Media />
+                <Parallax />
+                <Contact backgroundColor="black" />
+            </main>
             <Footer backgroundColor="black" />
 
         </>

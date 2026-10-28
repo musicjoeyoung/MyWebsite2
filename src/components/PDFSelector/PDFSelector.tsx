@@ -53,18 +53,18 @@ export const PDFSelector: React.FC<PDFSelectorProps> = ({
     };
 
     return (
-        <div className={`pdf-selector ${scoresInViewport ? 'scores-visible' : ''}`}>
+        <section className={`pdf-selector ${scoresInViewport ? 'scores-visible' : ''}`} aria-labelledby="pdf-library-title">
             <div className="pdf-header">
-                <h2 className="pdf-title">
-                    <FileText className="pdf-icon" />
+                <h3 className="pdf-title" id="pdf-library-title">
+                    <FileText className="pdf-icon" aria-hidden="true" />
                     PDF Library
-                </h2>
+                </h3>
                 <p className="pdf-subtitle">Select a document to view</p>
             </div>
 
 
 
-            <div className="pdf-grid" id="scores">
+            <div className="pdf-grid" id="pdf-grid">
                 {scores.map((score) => {
                     const doc: PDFDocument = {
                         id: score.id,
@@ -77,20 +77,22 @@ export const PDFSelector: React.FC<PDFSelectorProps> = ({
                     return (
                         <button
                             key={score.id}
+                            type="button"
+                            aria-pressed={selectedPDF?.id === score.id}
                             onClick={() => onSelectPDF(doc)}
                             className={`pdf-card ${selectedPDF?.id === score.id ? 'selected' : ''}`}
                         >
                             <div className="pdf-card-inner">
                                 <div className="pdf-meta">
-                                    <h3 className="pdf-card-title">{doc.name}</h3>
+                                    <h4 className="pdf-card-title">{doc.name}</h4>
 
                                 </div>
-                                <ChevronRight className={`chevron ${selectedPDF?.id === score.id ? 'chev-selected' : ''}`} />
+                                <ChevronRight className={`chevron ${selectedPDF?.id === score.id ? 'chev-selected' : ''}`} aria-hidden="true" />
                             </div>
                         </button>
                     );
                 })}
             </div>
-        </div>
+        </section>
     );
 };

@@ -35,8 +35,8 @@ const BioAI: React.FC<BioProps> = ({ bio }) => {
     ];
 
     return (
-        <div className="bio-ai" id="about">
-            <h2 className="bio-ai__heading">About Me</h2>
+        <section className="bio-ai" id="about" aria-labelledby="about-ai-heading">
+            <h2 className="bio-ai__heading" id="about-ai-heading">About Me</h2>
             <div className="bio-ai__profile">
                 <div className="bio-ai__photo-wrap">
                     <div className="bio-ai__photo-ring" aria-hidden="true" />
@@ -44,7 +44,7 @@ const BioAI: React.FC<BioProps> = ({ bio }) => {
                         <img
                             className="bio-ai__img"
                             src={profilePhoto}
-                            alt="Picture of the author"
+                            alt="Joseph Young"
                             width={180}
                             height={180}
                         />
@@ -70,7 +70,7 @@ const BioAI: React.FC<BioProps> = ({ bio }) => {
                     )}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

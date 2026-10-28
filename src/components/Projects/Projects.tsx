@@ -16,18 +16,17 @@ const Projects: React.FC = () => {
     const [showAll, setShowAll] = useState(false);
 
     const handleToggle = (): void => {
-        setTimeout(() => setShowAll(!showAll), 50);
-
         if (showAll) {
             document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
         }
+        setShowAll((showingAll) => !showingAll);
     }
 
 
     return (
-        <div className="projects" id="projects">
-            <h2>Projects</h2>
-            <div className={"projects__container "}>
+        <section className="projects" id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+            <div className={"projects__container "} id="projects-list">
                 {projects.slice(0, showAll ? projects.length : 3).map((project: Project, index: number) => (
                     <div className="projects__project" key={index}>
                         <h3>{project.title}</h3>
@@ -40,13 +39,13 @@ const Projects: React.FC = () => {
                                     const firstUrl = project.urls[0];
                                     if (typeof firstUrl === "string") {
                                         return (
-                                            <a href={firstUrl} target="_blank" className="projects__img-a">
+                                            <a href={firstUrl} target="_blank" rel="noopener noreferrer" className="projects__img-a">
                                                 <img className="projects__img" src={project.img_url} alt={project.title} />
                                             </a>
                                         );
                                     } else {
                                         return (
-                                            <a href={firstUrl.url} target="_blank" className="projects__img-a">
+                                            <a href={firstUrl.url} target="_blank" rel="noopener noreferrer" className="projects__img-a">
                                                 <img className="projects__img" src={project.img_url} alt={project.title} />
                                             </a>
                                         );
@@ -65,7 +64,7 @@ const Projects: React.FC = () => {
                                             href={urlObj}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                        >Link</a>
+                                        >View {project.title}</a>
                                     );
                                 } else {
                                     return (
@@ -75,7 +74,7 @@ const Projects: React.FC = () => {
                                             href={urlObj.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                        >{urlObj.name || "Link"}</a>
+                                        >{urlObj.name || `View ${project.title}`}</a>
                                     );
                                 }
                             })}
@@ -88,7 +87,7 @@ const Projects: React.FC = () => {
                                             href={repoObj}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                        >GitHub</a>
+                                        >GitHub repository for {project.title}</a>
                                     );
                                 } else {
                                     return (
@@ -98,7 +97,7 @@ const Projects: React.FC = () => {
                                             href={repoObj.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                        >{repoObj.name || "GitHub"}</a>
+                                        >{repoObj.name || `GitHub repository for ${project.title}`}</a>
                                     );
                                 }
                             })}
@@ -106,10 +105,10 @@ const Projects: React.FC = () => {
                     </div>
                 ))}
             </div>
-            <button className="projects__toggle" onClick={handleToggle}>
+            <button className="projects__toggle" type="button" aria-expanded={showAll} aria-controls="projects-list" onClick={handleToggle}>
                 {showAll ? 'Show Less' : 'Show More'}
             </button>
-        </div>
+        </section>
     );
 }
 export default Projects

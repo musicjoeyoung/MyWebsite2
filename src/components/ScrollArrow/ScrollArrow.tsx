@@ -1,7 +1,7 @@
 import "./ScrollArrow.scss"
 import { useState, useEffect } from 'react';
 
-const ScrollArrow = (/* { darkMode } */) => {
+const ScrollArrow = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     const handleScroll = () => {
@@ -29,13 +29,16 @@ const ScrollArrow = (/* { darkMode } */) => {
     }, []);
 
     return (
-        <div
-            className={`scroll-to-top ${isVisible ? 'visible' : ''} ${/* darkMode */"" ? 'dark dark--arrow' : ''}`}
+        <button
+            type="button"
+            className={`scroll-to-top ${isVisible ? 'visible' : ''}`}
+            aria-label="Scroll to top"
+            aria-hidden={!isVisible}
+            tabIndex={isVisible ? 0 : -1}
             onClick={scrollToTop}
         >
-            {/* className={`soundDesign ${darkMode ? `dark` && `dark--darkSoundDesign` : ''}`}  */}
-            <span>&uarr;</span>
-        </div>
+            <span aria-hidden="true">&uarr;</span>
+        </button>
     );
 };
 

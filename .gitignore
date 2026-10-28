@@ -27,5 +27,6 @@ dist-ssr
 .env.keys
 
 /planning
+/.agents/skills/accessibility/
 
 .vscode

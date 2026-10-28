@@ -8,7 +8,7 @@ const ProgressBar = () => {
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (scrollTop / height) * 100;
+      const scrolled = height > 0 ? Math.min(100, Math.max(0, (scrollTop / height) * 100)) : 0;
       setScrollPercentage(scrolled);
     };
 
@@ -24,7 +24,7 @@ const ProgressBar = () => {
       <div
         className="progress-container__bar"
         style={{ width: `${scrollPercentage}%` }}
-        aria-valuenow={scrollPercentage}
+        aria-valuenow={Math.round(scrollPercentage)}
         aria-valuemin={0}
         aria-valuemax={100}
         role="progressbar"

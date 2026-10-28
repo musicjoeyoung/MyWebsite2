@@ -8,9 +8,15 @@
     padding: 10px;
     cursor: pointer;
     display: none;
+    background: transparent;
+    padding: 10px;
 
     &.visible {
         display: block;
+    }
+
+    &:focus-visible {
+        right: 20px;
     }
 
     span {

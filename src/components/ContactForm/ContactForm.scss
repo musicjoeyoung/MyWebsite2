@@ -7,7 +7,8 @@
     align-items: center;
 
     input,
-    textarea {
+    textarea,
+    button {
         width: 90%;
 
         @include tablet {
@@ -18,6 +19,11 @@
         height: 10rem;
     }
     input[type="submit"] {
+        margin-top: 1rem;
+        width: 30%;
+    }
+
+    button[type="submit"] {
         margin-top: 1rem;
         width: 30%;
     }
